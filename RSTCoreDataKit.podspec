@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name				= 'RSTCoreDataKit'
-	s.version			= '1.0.0'
+	s.version			= '0.1.0'
 	s.summary			= 'A simpler CoreData stack'
 	s.homepage			= 'https://bitbucket.org/livemocha/rstcoredatakit'
 	s.license			= 'BSD'
