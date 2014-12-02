@@ -12,6 +12,7 @@
 		321EC5681A2E35BA0069C2C1 /* RSTCoreDataKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5671A2E35BA0069C2C1 /* RSTCoreDataKitTests.m */; };
 		321EC5A71A2E4BA60069C2C1 /* RSTCoreDataKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */; };
 		321EC5A91A2E4BAD0069C2C1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5A81A2E4BAD0069C2C1 /* README.md */; };
+		321EC5AB1A2E4D1B0069C2C1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 321EC5AA1A2E4D1B0069C2C1 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +32,9 @@
 		321EC5601A2E35BA0069C2C1 /* RSTCoreDataKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSTCoreDataKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		321EC5661A2E35BA0069C2C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		321EC5671A2E35BA0069C2C1 /* RSTCoreDataKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataKitTests.m; sourceTree = "<group>"; };
-		321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RSTCoreDataKit.podspec; path = ../RSTCoreDataKit.podspec; sourceTree = "<group>"; };
+		321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RSTCoreDataKit.podspec; path = /Users/jsquires/workspace/RSTCoreDataKit/RSTCoreDataKit.podspec; sourceTree = "<absolute>"; };
 		321EC5A81A2E4BAD0069C2C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		321EC5AA1A2E4D1B0069C2C1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +59,12 @@
 		321EC54B1A2E35BA0069C2C1 = {
 			isa = PBXGroup;
 			children = (
-				321EC5A81A2E4BAD0069C2C1 /* README.md */,
-				321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */,
 				321EC5571A2E35BA0069C2C1 /* RSTCoreDataKit */,
-				321EC5641A2E35BA0069C2C1 /* RSTCoreDataKitTests */,
+				321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */,
+				321EC5AA1A2E4D1B0069C2C1 /* LICENSE */,
+				321EC5A81A2E4BAD0069C2C1 /* README.md */,
 				321EC5561A2E35BA0069C2C1 /* Products */,
+				321EC5641A2E35BA0069C2C1 /* RSTCoreDataKitTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321EC5AB1A2E4D1B0069C2C1 /* LICENSE in Resources */,
 				321EC5A71A2E4BA60069C2C1 /* RSTCoreDataKit.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
