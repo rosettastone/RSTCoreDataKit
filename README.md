@@ -26,7 +26,7 @@ pod 'RSTCoreDataKit'
 
 ## License
 
-`RSTCoreDataKit` is released under the [BSD License][bsdLink]. See `LICENSE` for details.
+`RSTCoreDataKit` is released under a [BSD License][bsdLink]. See `LICENSE` for details.
 
 >**Copyright &copy; 2014 Rosetta Stone.**
 
