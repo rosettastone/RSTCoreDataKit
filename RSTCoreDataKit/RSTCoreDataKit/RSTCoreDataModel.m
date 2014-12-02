@@ -38,7 +38,7 @@
                                                                                  error:&error];
 
         if (error) {
-            NSLog(@"Error finding documents directory: %@, %@", error, [error userInfo]);
+            NSLog(@"*** %s Error finding documents directory: %@", __PRETTY_FUNCTION__, error);
             return nil;
         }
 
@@ -67,11 +67,11 @@
     NSDictionary *sourceMetaData = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:nil
                                                                                               URL:self.storeURL
                                                                                             error:&error];
-    if (sourceMetaData) {
+    if (sourceMetaData != nil) {
         isCompatible = [destinationModel isConfiguration:nil compatibleWithStoreMetadata:sourceMetaData];
     }
     else {
-        NSLog(@"Error checking persistent store coordinator meta data: %@, %@", error, [error userInfo]);
+        NSLog(@"*** %s Error checking persistent store coordinator meta data: %@", __PRETTY_FUNCTION__, error);
     }
 
     return !isCompatible;
@@ -79,11 +79,15 @@
 
 - (void)removeExistingModelStore
 {
-    NSError *error;
-    [[NSFileManager defaultManager] removeItemAtURL:self.storeURL error:&error];
-    
-    if (error) {
-        NSLog(@"%s error: Error removing model store: %@", __PRETTY_FUNCTION__, error);
+    NSError *error = nil;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    if ([fileManager fileExistsAtPath:self.storeURL.path]) {
+        BOOL success = [fileManager removeItemAtURL:self.storeURL error:&error];
+
+        if (!success) {
+            NSLog(@"*** %s Error removing model store: %@", __PRETTY_FUNCTION__, error);
+        }
     }
 }
 

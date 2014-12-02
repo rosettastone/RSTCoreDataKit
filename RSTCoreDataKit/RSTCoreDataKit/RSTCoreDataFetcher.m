@@ -23,28 +23,25 @@
 + (NSManagedObject *)objectForObjectID:(NSManagedObjectID *)objectID
                              inContext:(NSManagedObjectContext *)managedObjectContext
 {
-    if (!objectID) {
-        return nil;
-    }
+    NSParameterAssert(objectID != nil);
+    NSParameterAssert(managedObjectContext != nil);
     
     NSManagedObject *object = [managedObjectContext objectWithID:objectID];
     if (![object isFault]) {
         return object;
     }
-    
+
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:[objectID entity]];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF = %@", object];
-    [request setPredicate:predicate];
+    request.entity = objectID.entity;
+    request.predicate = [NSPredicate predicateWithFormat:@"SELF = %@", object];
     
     NSError *error = nil;
     NSArray *results = [managedObjectContext executeFetchRequest:request error:&error];
-    if ([results count] > 0 ) {
-        return [results objectAtIndex:0];
+    if (results == nil) {
+        NSLog(@"*** %s Error: %@", __PRETTY_FUNCTION__, error);
     }
-    
-    return nil;
+
+    return results.firstObject;
 }
 
 @end

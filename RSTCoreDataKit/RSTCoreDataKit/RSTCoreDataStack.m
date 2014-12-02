@@ -68,6 +68,8 @@
                          options:(NSDictionary *)options
                  concurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType
 {
+    NSParameterAssert(modelURL != nil);
+
     self = [super init];
     if (self) {
         _storeURL = [storeURL copy];
@@ -87,8 +89,7 @@
                                                           error:&error];
 
         if (error) {
-            NSLog(@"Error adding persistent store: %@, %@", error, [error userInfo]);
-            
+            NSLog(@"*** %s Error adding persistent store: %@", __PRETTY_FUNCTION__, error);
             return nil;
         }
 
@@ -115,7 +116,8 @@
     return [self newChildContextWithConcurrencyType:concurrencyType mergePolicyType:NSMergeByPropertyObjectTrumpMergePolicyType];
 }
 
-- (NSManagedObjectContext *)newChildContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType mergePolicyType:(NSMergePolicyType)mergePolicyType
+- (NSManagedObjectContext *)newChildContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType
+                                               mergePolicyType:(NSMergePolicyType)mergePolicyType
 {
     NSManagedObjectContext *privateChildContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:concurrencyType];
     privateChildContext.parentContext = self.managedObjectContext;

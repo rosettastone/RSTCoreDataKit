@@ -34,7 +34,11 @@
 - (instancetype)initWithStoreURL:(NSURL *)storeURL
                         modelURL:(NSURL *)modelURL
                          options:(NSDictionary *)options
-                 concurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType;
+                 concurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType NS_DESIGNATED_INITIALIZER;
+
+- (id)init NS_UNAVAILABLE;
+
+#pragma mark - Core data stack
 
 - (NSManagedObjectContext *)newDefaultPrivateChildContext;
 
