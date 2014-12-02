@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 	s.social_media_url	= 'https://twitter.com/jesse_squires'
 	s.source			= { :git => 'https://bitbucket.org/livemocha/rstcoredatakit.git', :tag => s.version.to_s }
 	s.platform			= :ios, '7.0'	
-	s.source_files		= 'RSTCoreDataKit/*.{h,m}'
+	s.source_files		= 'RSTCoreDataKit/RSTCoreDataKit/*.{h,m}'
 	s.frameworks		= 'CoreData', 'UIKit', 'Foundation'
 	s.requires_arc		= true
 end
