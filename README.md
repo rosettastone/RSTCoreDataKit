@@ -1,9 +1,5 @@
 ![RSTCoreDataKit banner][bannerLink]
 
-# RSTCoreDataKit
-
-A simpler CoreData stack
-
 [![license BSD](http://img.shields.io/badge/license-BSD-orange.png)][bsdLink]
 
 ## Requirements
