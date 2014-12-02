@@ -11,8 +11,19 @@
 		321EC5611A2E35BA0069C2C1 /* RSTCoreDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321EC5551A2E35BA0069C2C1 /* RSTCoreDataKit.framework */; };
 		321EC5681A2E35BA0069C2C1 /* RSTCoreDataKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5671A2E35BA0069C2C1 /* RSTCoreDataKitTests.m */; };
 		321EC5A71A2E4BA60069C2C1 /* RSTCoreDataKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */; };
-		321EC5A91A2E4BAD0069C2C1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5A81A2E4BAD0069C2C1 /* README.md */; };
 		321EC5AB1A2E4D1B0069C2C1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 321EC5AA1A2E4D1B0069C2C1 /* LICENSE */; };
+		321EC5B81A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC5AC1A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.h */; };
+		321EC5B91A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5AD1A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.m */; };
+		321EC5BA1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC5AE1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.h */; };
+		321EC5BB1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5AF1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.m */; };
+		321EC5BC1A2E51760069C2C1 /* RSTCoreDataContextSaver.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC5B01A2E51760069C2C1 /* RSTCoreDataContextSaver.h */; };
+		321EC5BD1A2E51760069C2C1 /* RSTCoreDataContextSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5B11A2E51760069C2C1 /* RSTCoreDataContextSaver.m */; };
+		321EC5BE1A2E51760069C2C1 /* RSTCoreDataFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC5B21A2E51760069C2C1 /* RSTCoreDataFetcher.h */; };
+		321EC5BF1A2E51760069C2C1 /* RSTCoreDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5B31A2E51760069C2C1 /* RSTCoreDataFetcher.m */; };
+		321EC5C01A2E51760069C2C1 /* RSTCoreDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC5B41A2E51760069C2C1 /* RSTCoreDataModel.h */; };
+		321EC5C11A2E51760069C2C1 /* RSTCoreDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5B51A2E51760069C2C1 /* RSTCoreDataModel.m */; };
+		321EC5C21A2E51760069C2C1 /* RSTCoreDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC5B61A2E51760069C2C1 /* RSTCoreDataStack.h */; };
+		321EC5C31A2E51760069C2C1 /* RSTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5B71A2E51760069C2C1 /* RSTCoreDataStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +46,18 @@
 		321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RSTCoreDataKit.podspec; path = /Users/jsquires/workspace/RSTCoreDataKit/RSTCoreDataKit.podspec; sourceTree = "<absolute>"; };
 		321EC5A81A2E4BAD0069C2C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		321EC5AA1A2E4D1B0069C2C1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		321EC5AC1A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+RSTCoreDataKit.h"; sourceTree = "<group>"; };
+		321EC5AD1A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+RSTCoreDataKit.m"; sourceTree = "<group>"; };
+		321EC5AE1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataContextDidSaveListener.h; sourceTree = "<group>"; };
+		321EC5AF1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataContextDidSaveListener.m; sourceTree = "<group>"; };
+		321EC5B01A2E51760069C2C1 /* RSTCoreDataContextSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataContextSaver.h; sourceTree = "<group>"; };
+		321EC5B11A2E51760069C2C1 /* RSTCoreDataContextSaver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataContextSaver.m; sourceTree = "<group>"; };
+		321EC5B21A2E51760069C2C1 /* RSTCoreDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataFetcher.h; sourceTree = "<group>"; };
+		321EC5B31A2E51760069C2C1 /* RSTCoreDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataFetcher.m; sourceTree = "<group>"; };
+		321EC5B41A2E51760069C2C1 /* RSTCoreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataModel.h; sourceTree = "<group>"; };
+		321EC5B51A2E51760069C2C1 /* RSTCoreDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataModel.m; sourceTree = "<group>"; };
+		321EC5B61A2E51760069C2C1 /* RSTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataStack.h; sourceTree = "<group>"; };
+		321EC5B71A2E51760069C2C1 /* RSTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +103,19 @@
 		321EC5571A2E35BA0069C2C1 /* RSTCoreDataKit */ = {
 			isa = PBXGroup;
 			children = (
+				321EC5AC1A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.h */,
+				321EC5AD1A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.m */,
+				321EC5AE1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.h */,
+				321EC5AF1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.m */,
+				321EC5B01A2E51760069C2C1 /* RSTCoreDataContextSaver.h */,
+				321EC5B11A2E51760069C2C1 /* RSTCoreDataContextSaver.m */,
+				321EC5B21A2E51760069C2C1 /* RSTCoreDataFetcher.h */,
+				321EC5B31A2E51760069C2C1 /* RSTCoreDataFetcher.m */,
 				321EC55A1A2E35BA0069C2C1 /* RSTCoreDataKit.h */,
+				321EC5B41A2E51760069C2C1 /* RSTCoreDataModel.h */,
+				321EC5B51A2E51760069C2C1 /* RSTCoreDataModel.m */,
+				321EC5B61A2E51760069C2C1 /* RSTCoreDataStack.h */,
+				321EC5B71A2E51760069C2C1 /* RSTCoreDataStack.m */,
 				321EC5581A2E35BA0069C2C1 /* Supporting Files */,
 			);
 			path = RSTCoreDataKit;
@@ -118,6 +153,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321EC5B81A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.h in Headers */,
+				321EC5C01A2E51760069C2C1 /* RSTCoreDataModel.h in Headers */,
+				321EC5C21A2E51760069C2C1 /* RSTCoreDataStack.h in Headers */,
+				321EC5BE1A2E51760069C2C1 /* RSTCoreDataFetcher.h in Headers */,
+				321EC5BC1A2E51760069C2C1 /* RSTCoreDataContextSaver.h in Headers */,
+				321EC5BA1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.h in Headers */,
 				321EC55B1A2E35BA0069C2C1 /* RSTCoreDataKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				321EC5A91A2E4BAD0069C2C1 /* README.md in Sources */,
+				321EC5B91A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.m in Sources */,
+				321EC5BF1A2E51760069C2C1 /* RSTCoreDataFetcher.m in Sources */,
+				321EC5C11A2E51760069C2C1 /* RSTCoreDataModel.m in Sources */,
+				321EC5BB1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.m in Sources */,
+				321EC5BD1A2E51760069C2C1 /* RSTCoreDataContextSaver.m in Sources */,
+				321EC5C31A2E51760069C2C1 /* RSTCoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

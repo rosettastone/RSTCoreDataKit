@@ -1,19 +1,35 @@
 //
-//  RSTCoreDataKit.h
-//  RSTCoreDataKit
+//  Rosetta Stone
+//  http://product.rosettastone.com/news/
 //
-//  Created by Jesse Squires on 12/2/14.
-//  Copyright (c) 2014 Rosetta Stone. All rights reserved.
+//
+//  Documentation
+//  http://cocoadocs.org/docsets/RSTCoreDataKit
+//
+//
+//  GitHub
+//  https://github.com/rosettastone/RSTCoreDataKit
+//
+//
+//  License
+//  Copyright (c) 2014 Rosetta Stone
+//  Released under a BSD license: http://opensource.org/licenses/BSD-3-Clause
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-//! Project version number for RSTCoreDataKit.
+//! Project version number for RSTCoreDataKit
 FOUNDATION_EXPORT double RSTCoreDataKitVersionNumber;
 
-//! Project version string for RSTCoreDataKit.
+//! Project version string for RSTCoreDataKit
 FOUNDATION_EXPORT const unsigned char RSTCoreDataKitVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <RSTCoreDataKit/PublicHeader.h>
+#import "RSTCoreDataModel.h"
+#import "RSTCoreDataStack.h"
 
+#import "RSTCoreDataContextSaver.h"
+#import "RSTCoreDataFetcher.h"
+#import "RSTCoreDataContextDidSaveListener.h"
 
+#import "NSManagedObject+RSTCoreDataKit.h"
