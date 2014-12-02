@@ -63,8 +63,8 @@
 				321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */,
 				321EC5AA1A2E4D1B0069C2C1 /* LICENSE */,
 				321EC5A81A2E4BAD0069C2C1 /* README.md */,
-				321EC5561A2E35BA0069C2C1 /* Products */,
 				321EC5641A2E35BA0069C2C1 /* RSTCoreDataKitTests */,
+				321EC5561A2E35BA0069C2C1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -406,6 +406,7 @@
 				321EC56D1A2E35BA0069C2C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		321EC56E1A2E35BA0069C2C1 /* Build configuration list for PBXNativeTarget "RSTCoreDataKitTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +415,7 @@
 				321EC5701A2E35BA0069C2C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
