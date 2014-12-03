@@ -31,9 +31,36 @@ pod 'RSTCoreDataKit', :git => 'https://github.com/rosettastone/RSTCoreDataKit.gi
 // Old school
 #import <RSTCoreDataKit/RSTCoreDataKit.h>
 ````
-*todo*
-* Scenario 1 (helpful to walk through some common stuff you'd do with this stack)
-* Scenario 2
+
+### Standing up your stack
+
+````objective-c
+// Initialize the Core Data model, this class encapsulates the notion of a .xcdatamodeld file
+// The name passed here should be the name of an .xcdatamodeld file
+RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"MyModelName"];
+
+// Initialize the stack
+RSTCoreDataStack *stack = [[RSTCoreDataStack alloc] initWithStoreURL:model.storeURL
+                                                            modelURL:model.modelURL
+                                                             options:nil
+                                                     concurrencyType:NSMainQueueConcurrencyType];
+
+// Alternatively, use the convenience initializers for common use cases
+
+// Same as above, with some default options
+RSTCoreDataStack *defaultStack = [RSTCoreDataStack defaultStackWithStoreURL:model.storeURL modelURL:model.modelURL];
+
+// Create a private queue stack
+RSTCoreDataStack *privateStack = [RSTCoreDataStack privateStackWithStoreURL:model.storeURL modelURL:model.modelURL];
+
+// Create an in-memory stack
+RSTCoreDataStack *inMemoryStack = [RSTCoreDataStack stackWithInMemoryStoreWithModelURL:model.modelURL];
+````
+
+### Unit Testing
+
+`RSTCoreDataKit` has a suite of unit tests included. 
+
 
 ## Documentation
 
@@ -41,12 +68,6 @@ Sweet documentation is [available here][docsLink] via [@CocoaDocs](https://twitt
 
 * Apple's [Core Data Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html)
 * objc.io's [Issue #4: Core Data](http://www.objc.io/issue-4/)
-
-## Unit Testing
-
-`RSTCoreDataKit` has a suite of unit tests included. 
-
-*Anything we want to say about how rad our Unit Tests are? Or how to run them?*
 
 ## License
 
