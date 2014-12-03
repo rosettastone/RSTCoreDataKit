@@ -39,7 +39,11 @@ pod 'RSTCoreDataKit', :git => 'https://github.com/rosettastone/RSTCoreDataKit.gi
 
 Docs are [available here][docsLink] via [@CocoaDocs](https://twitter.com/CocoaDocs).
 
-## Testing
+Also see Apple's [Core Data Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html).
+
+## Unit Testing
+
+`RSTCoreDataKit` has a suite of unit tests included. Run with `⌘+u`.
 
 *Anything we want to say about how rad our Unit Tests are? Or how to run them?*
 
