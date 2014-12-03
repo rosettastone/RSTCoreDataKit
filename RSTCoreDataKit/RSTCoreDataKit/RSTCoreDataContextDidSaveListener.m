@@ -55,7 +55,7 @@
 
 - (void)didReceiveManagedObjectContextDidSaveNotification:(NSNotification *)notification
 {
-    self.handler();
+    self.handler(notification);
 }
 
 @end

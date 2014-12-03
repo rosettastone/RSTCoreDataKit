@@ -31,7 +31,8 @@
     XCTestExpectation *expection = [self expectationWithDescription:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]];
 
     // GIVEN: a new context save listener
-    RSTCoreDataContextDidSaveListener *listener = [[RSTCoreDataContextDidSaveListener alloc] initWithHandler:^{
+    RSTCoreDataContextDidSaveListener *listener = [[RSTCoreDataContextDidSaveListener alloc] initWithHandler:^(NSNotification *notification) {
+        XCTAssertEqualObjects(notification.name, NSManagedObjectContextDidSaveNotification, @"Should receive expected notification");
         [expection fulfill];
     } forManagedObjectContext:nil];
 
@@ -53,7 +54,8 @@
     // GIVEN: a new context save listener and context
     NSManagedObjectContext *context = self.testStack.managedObjectContext;
 
-    RSTCoreDataContextDidSaveListener *listener = [[RSTCoreDataContextDidSaveListener alloc] initWithHandler:^{
+    RSTCoreDataContextDidSaveListener *listener = [[RSTCoreDataContextDidSaveListener alloc] initWithHandler:^(NSNotification *notification) {
+        XCTAssertEqualObjects(notification.name, NSManagedObjectContextDidSaveNotification, @"Should receive expected notification");
         [expection fulfill];
     } forManagedObjectContext:context];
 
@@ -78,7 +80,7 @@
 
     __block BOOL handlerCalled = NO;
 
-    RSTCoreDataContextDidSaveListener *listenerForChildContext = [[RSTCoreDataContextDidSaveListener alloc] initWithHandler:^{
+    RSTCoreDataContextDidSaveListener *listenerForChildContext = [[RSTCoreDataContextDidSaveListener alloc] initWithHandler:^(NSNotification *notification) {
         handlerCalled = YES;
     } forManagedObjectContext:childContext];
 

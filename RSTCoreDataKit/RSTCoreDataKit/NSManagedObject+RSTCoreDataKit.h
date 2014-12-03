@@ -20,10 +20,24 @@
 
 @interface NSManagedObject (RSTCoreDataKit)
 
+/**
+ *  @return The entity name of the receiver.
+ */
 + (NSString *)rst_entityName;
 
+/**
+ *  Creates, configures, and returns an instance of the class for the entity with a given name.
+ *
+ *  @param managedObjectContext The managed object context in which the entity should be inserted.
+ *
+ *  @return A new, fully configured instance of the class for the entity. 
+ *  The instance has its entity description set and is inserted it into context.
+ */
 + (instancetype)rst_insertNewObjectInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
+/**
+ *  @return A fetch request configured to fetch using the entity name of the receiver.
+ */
 + (NSFetchRequest *)rst_fetchRequest;
 
 @end
