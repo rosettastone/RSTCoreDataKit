@@ -22,13 +22,13 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithName:(NSString *)modelName
+- (instancetype)initWithName:(NSString *)modelName bundle:(NSBundle *)bundle
 {
     self = [super init];
     if (self) {
         _modelName = [modelName copy];
         _databaseFilename = [NSString stringWithFormat:@"%@.sqlite", _modelName];
-        _modelURL = [[NSBundle mainBundle] URLForResource:_modelName withExtension:@"momd"];
+        _modelURL = [bundle URLForResource:_modelName withExtension:@"momd"];
 
         NSError *error = nil;
         NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory
@@ -45,6 +45,11 @@
         _storeURL = [documentsDirectoryURL URLByAppendingPathComponent:_databaseFilename];
     }
     return self;
+}
+
+- (instancetype)initWithName:(NSString *)modelName
+{
+    return [self initWithName:modelName bundle:[NSBundle mainBundle]];
 }
 
 #pragma mark - NSObject

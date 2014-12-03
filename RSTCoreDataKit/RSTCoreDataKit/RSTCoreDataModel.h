@@ -28,7 +28,9 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithName:(NSString *)modelName NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithName:(NSString *)modelName bundle:(NSBundle *)bundle NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)initWithName:(NSString *)modelName;
 
 - (id)init NS_UNAVAILABLE;
 
