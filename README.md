@@ -2,7 +2,9 @@
 
 [![license BSD](http://img.shields.io/badge/license-BSD-orange.png)][bsdLink]
 
-# About
+## About
+
+CoreData sucks.
 
 ## Requirements
 
