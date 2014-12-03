@@ -32,10 +32,16 @@ pod 'RSTCoreDataKit', :git => 'https://github.com/rosettastone/RSTCoreDataKit.gi
 #import <RSTCoreDataKit/RSTCoreDataKit.h>
 ````
 *todo*
+* Scenario 1 (helpful to walk through some common stuff you'd do with this stack)
+* Scenario 2
 
 ## Documentation
 
 Docs are [available here][docsLink] via [@CocoaDocs](https://twitter.com/CocoaDocs).
+
+## Testing
+
+*Anything we want to say about how rad our Unit Tests are? Or how to run them?*
 
 ## License
 
