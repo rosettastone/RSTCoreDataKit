@@ -43,7 +43,7 @@ Also see Apple's [Core Data Programming Guide](https://developer.apple.com/libra
 
 ## Unit Testing
 
-`RSTCoreDataKit` has a suite of unit tests included. Run with `⌘+u`.
+`RSTCoreDataKit` has a suite of unit tests included. 
 
 *Anything we want to say about how rad our Unit Tests are? Or how to run them?*
 
