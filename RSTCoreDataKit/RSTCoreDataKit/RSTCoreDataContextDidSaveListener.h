@@ -47,6 +47,9 @@ typedef void(^RSTCoreDataContextSaveHandler)(NSNotification *notification);
 - (instancetype)initWithHandler:(RSTCoreDataContextSaveHandler)handler
         forManagedObjectContext:(NSManagedObjectContext *)managedObjectContext NS_DESIGNATED_INITIALIZER;
 
+/**
+ *  Not a valid initializer for this class.
+ */
 - (id)init NS_UNAVAILABLE;
 
 @end
