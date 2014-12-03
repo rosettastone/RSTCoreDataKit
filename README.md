@@ -39,7 +39,8 @@ pod 'RSTCoreDataKit', :git => 'https://github.com/rosettastone/RSTCoreDataKit.gi
 
 Docs are [available here][docsLink] via [@CocoaDocs](https://twitter.com/CocoaDocs).
 
-Also see Apple's [Core Data Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html).
+* Apple's [Core Data Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html)
+* Objc.io [Issue #4: Core Data](http://www.objc.io/issue-4/)
 
 ## Unit Testing
 
