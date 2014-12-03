@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		321EC55B1A2E35BA0069C2C1 /* RSTCoreDataKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC55A1A2E35BA0069C2C1 /* RSTCoreDataKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		321EC5611A2E35BA0069C2C1 /* RSTCoreDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321EC5551A2E35BA0069C2C1 /* RSTCoreDataKit.framework */; };
-		321EC5681A2E35BA0069C2C1 /* RSTCoreDataKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5671A2E35BA0069C2C1 /* RSTCoreDataKitTests.m */; };
 		321EC5A71A2E4BA60069C2C1 /* RSTCoreDataKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */; };
 		321EC5AB1A2E4D1B0069C2C1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 321EC5AA1A2E4D1B0069C2C1 /* LICENSE */; };
 		321EC5B81A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC5AC1A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.h */; };
@@ -24,6 +22,11 @@
 		321EC5C11A2E51760069C2C1 /* RSTCoreDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5B51A2E51760069C2C1 /* RSTCoreDataModel.m */; };
 		321EC5C21A2E51760069C2C1 /* RSTCoreDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC5B61A2E51760069C2C1 /* RSTCoreDataStack.h */; };
 		321EC5C31A2E51760069C2C1 /* RSTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5B71A2E51760069C2C1 /* RSTCoreDataStack.m */; };
+		323EC1101A2E8695003C12EF /* RSTCoreDataContextDidSaveListenerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 323EC10F1A2E8695003C12EF /* RSTCoreDataContextDidSaveListenerTests.m */; };
+		323EC1171A2E8784003C12EF /* RSTCoreDataKitTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 323EC1161A2E8784003C12EF /* RSTCoreDataKitTestCase.m */; };
+		323EC1191A2E891E003C12EF /* RSTCoreDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321EC5551A2E35BA0069C2C1 /* RSTCoreDataKit.framework */; };
+		323EC11C1A2E8B45003C12EF /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 323EC11A1A2E8B45003C12EF /* TestModel.xcdatamodeld */; };
+		323EC1201A2E8BC8003C12EF /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 323EC11F1A2E8BC8003C12EF /* Employee.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +45,6 @@
 		321EC55A1A2E35BA0069C2C1 /* RSTCoreDataKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataKit.h; sourceTree = "<group>"; };
 		321EC5601A2E35BA0069C2C1 /* RSTCoreDataKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSTCoreDataKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		321EC5661A2E35BA0069C2C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		321EC5671A2E35BA0069C2C1 /* RSTCoreDataKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataKitTests.m; sourceTree = "<group>"; };
 		321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RSTCoreDataKit.podspec; path = /Users/jsquires/workspace/RSTCoreDataKit/RSTCoreDataKit.podspec; sourceTree = "<absolute>"; };
 		321EC5A81A2E4BAD0069C2C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		321EC5AA1A2E4D1B0069C2C1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -58,6 +60,12 @@
 		321EC5B51A2E51760069C2C1 /* RSTCoreDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataModel.m; sourceTree = "<group>"; };
 		321EC5B61A2E51760069C2C1 /* RSTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataStack.h; sourceTree = "<group>"; };
 		321EC5B71A2E51760069C2C1 /* RSTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataStack.m; sourceTree = "<group>"; };
+		323EC10F1A2E8695003C12EF /* RSTCoreDataContextDidSaveListenerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataContextDidSaveListenerTests.m; sourceTree = "<group>"; };
+		323EC1151A2E8784003C12EF /* RSTCoreDataKitTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataKitTestCase.h; sourceTree = "<group>"; };
+		323EC1161A2E8784003C12EF /* RSTCoreDataKitTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataKitTestCase.m; sourceTree = "<group>"; };
+		323EC11B1A2E8B45003C12EF /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
+		323EC11E1A2E8BC8003C12EF /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		323EC11F1A2E8BC8003C12EF /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				321EC5611A2E35BA0069C2C1 /* RSTCoreDataKit.framework in Frameworks */,
+				323EC1191A2E891E003C12EF /* RSTCoreDataKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +140,11 @@
 		321EC5641A2E35BA0069C2C1 /* RSTCoreDataKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				321EC5671A2E35BA0069C2C1 /* RSTCoreDataKitTests.m */,
+				323EC10F1A2E8695003C12EF /* RSTCoreDataContextDidSaveListenerTests.m */,
+				323EC1151A2E8784003C12EF /* RSTCoreDataKitTestCase.h */,
+				323EC1161A2E8784003C12EF /* RSTCoreDataKitTestCase.m */,
 				321EC5651A2E35BA0069C2C1 /* Supporting Files */,
+				323EC11D1A2E8BA8003C12EF /* Test Fixtures */,
 			);
 			path = RSTCoreDataKitTests;
 			sourceTree = "<group>";
@@ -144,6 +155,16 @@
 				321EC5661A2E35BA0069C2C1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		323EC11D1A2E8BA8003C12EF /* Test Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				323EC11A1A2E8B45003C12EF /* TestModel.xcdatamodeld */,
+				323EC11E1A2E8BC8003C12EF /* Employee.h */,
+				323EC11F1A2E8BC8003C12EF /* Employee.m */,
+			);
+			name = "Test Fixtures";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				321EC5681A2E35BA0069C2C1 /* RSTCoreDataKitTests.m in Sources */,
+				323EC11C1A2E8B45003C12EF /* TestModel.xcdatamodeld in Sources */,
+				323EC1201A2E8BC8003C12EF /* Employee.m in Sources */,
+				323EC1171A2E8784003C12EF /* RSTCoreDataKitTestCase.m in Sources */,
+				323EC1101A2E8695003C12EF /* RSTCoreDataContextDidSaveListenerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +488,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		323EC11A1A2E8B45003C12EF /* TestModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				323EC11B1A2E8B45003C12EF /* TestModel.xcdatamodel */,
+			);
+			currentVersion = 323EC11B1A2E8B45003C12EF /* TestModel.xcdatamodel */;
+			path = TestModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 321EC54C1A2E35BA0069C2C1 /* Project object */;
 }
