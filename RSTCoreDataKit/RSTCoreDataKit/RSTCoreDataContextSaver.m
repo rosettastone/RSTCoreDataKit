@@ -38,7 +38,7 @@
         success = [context save:&error];
 
         if (!success) {
-            NSLog(@"*** %s Error saving managed object context: %@, %@", __PRETTY_FUNCTION__, error, error.userInfo);
+            NSLog(@"*** %s Error saving managed object context: %@", __PRETTY_FUNCTION__, error);
         }
     }];
 
@@ -61,7 +61,7 @@
         BOOL success = [context save:&error];
 
         if (!success) {
-            NSLog(@"*** %s Error saving managed object context: %@, %@", __PRETTY_FUNCTION__, error, error.userInfo);
+            NSLog(@"*** %s Error saving managed object context: %@", __PRETTY_FUNCTION__, error);
         }
     }];
 }
