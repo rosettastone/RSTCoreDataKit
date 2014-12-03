@@ -24,6 +24,9 @@
 
 - (instancetype)initWithName:(NSString *)modelName bundle:(NSBundle *)bundle
 {
+    NSParameterAssert(modelName != nil);
+    NSParameterAssert(bundle != nil);
+    
     self = [super init];
     if (self) {
         _modelName = [modelName copy];

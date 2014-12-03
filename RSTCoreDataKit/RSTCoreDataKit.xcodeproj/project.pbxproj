@@ -10,6 +10,7 @@
 		321527D21A2F806900A08FD8 /* NSManagedObjectExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 321527D11A2F806900A08FD8 /* NSManagedObjectExtensionsTests.m */; };
 		321527D41A2F851E00A08FD8 /* RSTCoreDataContextSaverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 321527D31A2F851E00A08FD8 /* RSTCoreDataContextSaverTests.m */; };
 		321527D61A2F905A00A08FD8 /* RSTCoreDataFetcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 321527D51A2F905A00A08FD8 /* RSTCoreDataFetcherTests.m */; };
+		321527D81A2F9ADC00A08FD8 /* RSTCoreDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 321527D71A2F9ADC00A08FD8 /* RSTCoreDataModelTests.m */; };
 		321EC55B1A2E35BA0069C2C1 /* RSTCoreDataKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC55A1A2E35BA0069C2C1 /* RSTCoreDataKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		321EC5A71A2E4BA60069C2C1 /* RSTCoreDataKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */; };
 		321EC5AB1A2E4D1B0069C2C1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 321EC5AA1A2E4D1B0069C2C1 /* LICENSE */; };
@@ -46,6 +47,7 @@
 		321527D11A2F806900A08FD8 /* NSManagedObjectExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSManagedObjectExtensionsTests.m; sourceTree = "<group>"; };
 		321527D31A2F851E00A08FD8 /* RSTCoreDataContextSaverTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataContextSaverTests.m; sourceTree = "<group>"; };
 		321527D51A2F905A00A08FD8 /* RSTCoreDataFetcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataFetcherTests.m; sourceTree = "<group>"; };
+		321527D71A2F9ADC00A08FD8 /* RSTCoreDataModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataModelTests.m; sourceTree = "<group>"; };
 		321EC5551A2E35BA0069C2C1 /* RSTCoreDataKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSTCoreDataKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		321EC5591A2E35BA0069C2C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		321EC55A1A2E35BA0069C2C1 /* RSTCoreDataKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataKit.h; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				321527D51A2F905A00A08FD8 /* RSTCoreDataFetcherTests.m */,
 				323EC1151A2E8784003C12EF /* RSTCoreDataKitTestCase.h */,
 				323EC1161A2E8784003C12EF /* RSTCoreDataKitTestCase.m */,
+				321527D71A2F9ADC00A08FD8 /* RSTCoreDataModelTests.m */,
 				321EC5651A2E35BA0069C2C1 /* Supporting Files */,
 				323EC11D1A2E8BA8003C12EF /* Test Fixtures */,
 			);
@@ -306,6 +309,7 @@
 			files = (
 				323EC11C1A2E8B45003C12EF /* TestModel.xcdatamodeld in Sources */,
 				323EC1201A2E8BC8003C12EF /* Employee.m in Sources */,
+				321527D81A2F9ADC00A08FD8 /* RSTCoreDataModelTests.m in Sources */,
 				321527D41A2F851E00A08FD8 /* RSTCoreDataContextSaverTests.m in Sources */,
 				323EC1171A2E8784003C12EF /* RSTCoreDataKitTestCase.m in Sources */,
 				323EC1101A2E8695003C12EF /* RSTCoreDataContextDidSaveListenerTests.m in Sources */,
