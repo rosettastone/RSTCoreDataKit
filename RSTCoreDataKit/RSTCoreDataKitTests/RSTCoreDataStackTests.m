@@ -77,7 +77,7 @@
     // GIVEN: a core data model
     RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"TestModel" bundle:[NSBundle bundleForClass:[self class]]];
 
-    // WHEN: we init an in-memory core data stack
+    // WHEN: we init a private queue core data stack
     RSTCoreDataStack *stack = [RSTCoreDataStack privateStackWithStoreURL:model.storeURL modelURL:model.modelURL];
 
     // THEN: init succeeds and the store does not exist disk
