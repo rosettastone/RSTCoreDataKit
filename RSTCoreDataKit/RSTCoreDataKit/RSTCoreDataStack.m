@@ -23,8 +23,8 @@
 @property (nonatomic, strong, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, strong, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-@property (nonatomic, strong) NSURL *storeURL;
-@property (nonatomic, strong) NSURL *modelURL;
+@property (nonatomic, strong, readonly) NSURL *storeURL;
+@property (nonatomic, strong, readonly) NSURL *modelURL;
 
 @end
 
@@ -99,21 +99,25 @@
     return self;
 }
 
-#pragma mark - Core data stack
+#pragma mark - NSObject
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@: storeURL=%@, modelURL=%@>", [self class], self.storeURL, self.modelURL];
+}
+
+#pragma mark - Creating child contexts
 
 - (NSManagedObjectContext *)newDefaultPrivateChildContext
 {
-    return [self newChildContextWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    return [self newChildContextWithConcurrencyType:NSPrivateQueueConcurrencyType
+                                    mergePolicyType:NSMergeByPropertyObjectTrumpMergePolicyType];
 }
 
 - (NSManagedObjectContext *)newDefaultMainChildContext
 {
-    return [self newChildContextWithConcurrencyType:NSMainQueueConcurrencyType];
-}
-
-- (NSManagedObjectContext *)newChildContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType
-{
-    return [self newChildContextWithConcurrencyType:concurrencyType mergePolicyType:NSMergeByPropertyObjectTrumpMergePolicyType];
+    return [self newChildContextWithConcurrencyType:NSMainQueueConcurrencyType
+                                    mergePolicyType:NSMergeByPropertyObjectTrumpMergePolicyType];
 }
 
 - (NSManagedObjectContext *)newChildContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType
@@ -123,13 +127,6 @@
     privateChildContext.parentContext = self.managedObjectContext;
     privateChildContext.mergePolicy = [[NSMergePolicy alloc] initWithMergeType:mergePolicyType];
     return privateChildContext;
-}
-
-#pragma mark - NSObject
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"<%@: storeURL=%@, modelURL=%@>", [self class], self.storeURL, self.modelURL];
 }
 
 @end

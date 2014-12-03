@@ -41,7 +41,7 @@
 @property (nonatomic, readonly) NSURL *modelURL;
 
 /**
- *  Returns the file URL specifying the store file.
+ *  Returns the file URL specifying the store.
  */
 @property (nonatomic, readonly) NSURL *storeURL;
 
