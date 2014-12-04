@@ -32,6 +32,7 @@
 		323EC1191A2E891E003C12EF /* RSTCoreDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321EC5551A2E35BA0069C2C1 /* RSTCoreDataKit.framework */; };
 		323EC11C1A2E8B45003C12EF /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 323EC11A1A2E8B45003C12EF /* TestModel.xcdatamodeld */; };
 		323EC1201A2E8BC8003C12EF /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 323EC11F1A2E8BC8003C12EF /* Employee.m */; };
+		32ED78B71A30E2AD00A579E9 /* CONTRIBUTING.md in Sources */ = {isa = PBXBuildFile; fileRef = 32ED78B61A30E2AD00A579E9 /* CONTRIBUTING.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		323EC11B1A2E8B45003C12EF /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		323EC11E1A2E8BC8003C12EF /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
 		323EC11F1A2E8BC8003C12EF /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		32ED78B61A30E2AD00A579E9 /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */,
 				321EC5AA1A2E4D1B0069C2C1 /* LICENSE */,
 				321EC5A81A2E4BAD0069C2C1 /* README.md */,
+				32ED78B61A30E2AD00A579E9 /* CONTRIBUTING.md */,
 				321EC5641A2E35BA0069C2C1 /* RSTCoreDataKitTests */,
 				321EC5561A2E35BA0069C2C1 /* Products */,
 			);
@@ -301,6 +304,7 @@
 				321EC5BF1A2E51760069C2C1 /* RSTCoreDataFetcher.m in Sources */,
 				321EC5C11A2E51760069C2C1 /* RSTCoreDataModel.m in Sources */,
 				321EC5BB1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.m in Sources */,
+				32ED78B71A30E2AD00A579E9 /* CONTRIBUTING.md in Sources */,
 				321EC5BD1A2E51760069C2C1 /* RSTCoreDataContextSaver.m in Sources */,
 				321EC5C31A2E51760069C2C1 /* RSTCoreDataStack.m in Sources */,
 			);
