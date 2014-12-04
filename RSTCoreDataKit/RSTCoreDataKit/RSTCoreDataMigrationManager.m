@@ -89,7 +89,8 @@
             mappingModel = [NSMappingModel mappingModelFromBundles:nil
                                                     forSourceModel:sourceModel
                                                   destinationModel:targetModel];
-            if (mappingModel) {
+
+            if (mappingModel != nil) {
                 modelPath = path;
                 break;
             }
@@ -102,22 +103,22 @@
 
     [self performCheckpointStoreWithSourceModel:sourceModel sourceStoreURL:model.storeURL];
 
-    NSString *storeExtension = [model.storeURL.path pathExtension];
-    NSString *storePath = [model.storeURL.path stringByDeletingPathExtension];
+    NSString *storePath = [NSString stringWithFormat:@"%@.%@.%@",
+                           [model.storeURL.path stringByDeletingPathExtension], [[NSProcessInfo processInfo] globallyUniqueString], model.storeURL.path.pathExtension];
 
-    storePath = [NSString stringWithFormat:@"%@.%@.%@", storePath, [[NSProcessInfo processInfo] globallyUniqueString], storeExtension];
     NSURL *destinationStoreURL = [NSURL fileURLWithPath:storePath];
 
     NSMigrationManager *manager = [[NSMigrationManager alloc] initWithSourceModel:sourceModel destinationModel:targetModel];
+    BOOL success = [manager migrateStoreFromURL:model.storeURL
+                                           type:storeType
+                                        options:nil
+                               withMappingModel:mappingModel
+                               toDestinationURL:destinationStoreURL
+                                destinationType:storeType
+                             destinationOptions:nil
+                                          error:error];
 
-    if (![manager migrateStoreFromURL:model.storeURL
-                                 type:storeType
-                              options:nil
-                     withMappingModel:mappingModel
-                     toDestinationURL:destinationStoreURL
-                      destinationType:storeType
-                   destinationOptions:nil
-                                error:error]) {
+    if (!success) {
         return NO;
     }
 
@@ -133,21 +134,16 @@
     [persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                              configuration:nil
                                                        URL:sourceStoreURL
-                                                   options:@{ NSSQLitePragmasOption: @{@"journal_mode": @"DELETE"} }
+                                                   options:@{ NSSQLitePragmasOption: @{ @"journal_mode": @"DELETE"} }
                                                      error:nil];
 
-    [persistentStoreCoordinator removePersistentStore:[persistentStoreCoordinator persistentStoreForURL:sourceStoreURL]
-                                                error:nil];
+    [persistentStoreCoordinator removePersistentStore:[persistentStoreCoordinator persistentStoreForURL:sourceStoreURL] error:nil];
 }
-
-#pragma - File path helpers
 
 - (NSArray *)modelPathsInDeploymentDirectory:(NSString *)momdPath
 {
     NSString *resourceSubpath = [momdPath lastPathComponent];
-    NSArray *array = [[NSBundle mainBundle]
-                      pathsForResourcesOfType:@"mom"
-                      inDirectory:resourceSubpath];
+    NSArray *array = [[NSBundle mainBundle] pathsForResourcesOfType:@"mom" inDirectory:resourceSubpath];
     if (array.count == 0) {
         return nil;
     }
@@ -161,21 +157,17 @@
     NSString *backupPath = [NSTemporaryDirectory() stringByAppendingPathComponent:guid];
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (![fileManager moveItemAtPath:sourceURL.path
-                              toPath:backupPath
-                               error:error]) {
+    if (![fileManager moveItemAtPath:sourceURL.path toPath:backupPath error:error]) {
         return NO;
     }
 
-    if (![fileManager moveItemAtPath:destinationURL.path
-                              toPath:sourceURL.path
-                               error:error]) {
-
+    if (![fileManager moveItemAtPath:destinationURL.path toPath:sourceURL.path error:error]) {
         [fileManager moveItemAtPath:backupPath
                              toPath:sourceURL.path
                               error:nil];
         return NO;
     }
+
     return YES;
 }
 
