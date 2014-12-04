@@ -18,11 +18,11 @@
 
 @import XCTest;
 
-
 // RSTCoreDataKit
 #import "RSTCoreDataModel.h"
 #import "RSTCoreDataStack.h"
 
+#import "RSTCoreDataMigrationManager.h"
 #import "RSTCoreDataContextSaver.h"
 #import "RSTCoreDataFetcher.h"
 #import "RSTCoreDataContextDidSaveListener.h"
@@ -32,7 +32,7 @@
 
 // Test Model
 #import "Employee.h"
-
+#import "Company.h"
 
 @interface RSTCoreDataKitTestCase : XCTestCase
 
@@ -43,5 +43,7 @@
 #pragma mark - Helpers
 
 - (Employee *)insertFakeEmployee;
+
+- (Company *)insertFakeCompany;
 
 @end

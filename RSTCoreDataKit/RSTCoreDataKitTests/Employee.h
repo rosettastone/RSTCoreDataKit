@@ -24,7 +24,7 @@
 @interface Employee : NSManagedObject
 
 @property (nonatomic, retain) NSDate * birthdate;
-@property (nonatomic, retain) NSNumber * employeeId;
+@property (nonatomic, assign) int32_t employeeId;
 @property (nonatomic, retain) NSString * firstName;
 @property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) Company *company;

@@ -46,4 +46,11 @@
     return employee;
 }
 
+- (Company *)insertFakeCompany
+{
+    Company *company = [Company rst_insertNewObjectInManagedObjectContext:self.testStack.managedObjectContext];
+    company.name = @"Rosetta Stone";
+    return company;
+}
+
 @end

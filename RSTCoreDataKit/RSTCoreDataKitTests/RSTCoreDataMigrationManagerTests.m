@@ -19,6 +19,37 @@
 #import "RSTCoreDataKitTestCase.h"
 
 
+
+@interface FakeMigrationDelegate : XCTestCase <RSTCoreDataMigrationManagerDelegate>
+
+@property (nonatomic, strong) XCTestExpectation *delegateExpectation;
+
+@property (nonatomic, assign) BOOL expectedSuccess;
+
+@end
+
+
+@implementation FakeMigrationDelegate
+
+- (void)migrationManager:(RSTCoreDataMigrationManager *)migrationManager didSucceed:(BOOL)didSucceed withError:(NSError *)error
+{
+    XCTAssertEqualObjects(self, migrationManager);
+    XCTAssertEqual(self.expectedSuccess, didSucceed);
+
+    if (didSucceed) {
+        XCTAssertNil(error);
+    }
+    else {
+        XCTAssertNotNil(error);
+    }
+
+    [self.delegateExpectation fulfill];
+}
+
+@end
+
+
+
 @interface RSTCoreDataMigrationManagerTests : RSTCoreDataKitTestCase
 
 @end
@@ -26,6 +57,26 @@
 
 @implementation RSTCoreDataMigrationManagerTests
 
-// TODO:
+- (void)testNoMigrationNeeded
+{
+    // GIVEN: a migration manager and model
+    RSTCoreDataMigrationManager *migrationManager = [RSTCoreDataMigrationManager new];
+
+    FakeMigrationDelegate *delegate = [FakeMigrationDelegate new];
+    delegate.delegateExpectation = [self expectationWithDescription:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]];
+    delegate.expectedSuccess = YES;
+
+    migrationManager.delegate = delegate;
+
+    // WHEN: we migrate a model with no new versions
+    BOOL success = [migrationManager migrateModel:self.testModel];
+
+    // THEN: migration succeeds and the delegate method is called with the expected data
+    XCTAssertTrue(success);
+
+    [self waitForExpectationsWithTimeout:5 handler:^(NSError *error) {
+        XCTAssertNil(error, @"Expectation should not error");
+    }];
+}
 
 @end
