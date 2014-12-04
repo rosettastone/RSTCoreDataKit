@@ -4,7 +4,7 @@
 
 ## About
 
-CoreData sucks.
+*TODO*
 
 * Notoriously difficult
 * Steep learning curve
