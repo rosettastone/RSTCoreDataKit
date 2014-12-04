@@ -6,7 +6,8 @@
 
 Apple's [Core Data](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html) framework is notoriously difficult to use, can have a steep learning curve, and involves a lot of boilerplate code just to get started. The goal of this library is to simplify standing up your Core Data stack so that you can quickly get started working on your model. It also provides utilities that make it easier to unit test your model layer.
 
-*The Core Data Stack, via [objc.io](http://www.objc.io/issue-4/core-data-overview.html)*:
+*The Core Data Stack (via [objc.io](http://www.objc.io/issue-4/core-data-overview.html))*
+
 ![stack img](http://www.objc.io/images/issue-4/stack-simple.png)
 
 ## Requirements
