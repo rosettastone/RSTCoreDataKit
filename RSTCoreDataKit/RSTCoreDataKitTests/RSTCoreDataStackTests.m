@@ -100,4 +100,20 @@
     XCTAssertEqualObjects(childContext.parentContext, self.testStack.managedObjectContext);
 }
 
+- (void)testChildContextCreateConvenienceMethods
+{
+    // GIVEN: a core data stack
+
+    // WHEN: we request a child context
+    NSManagedObjectContext *childContext = [self.testStack newDefaultMainChildContext];
+    NSManagedObjectContext *privateChildContext = [self.testStack newDefaultPrivateChildContext];
+
+    // THEN: a child context is successfully created
+    XCTAssertNotNil(childContext);
+    XCTAssertEqualObjects(childContext.parentContext, self.testStack.managedObjectContext);
+
+    XCTAssertNotNil(privateChildContext);
+    XCTAssertEqualObjects(privateChildContext.parentContext, self.testStack.managedObjectContext);
+}
+
 @end
