@@ -32,7 +32,7 @@ pod 'RSTCoreDataKit', :git => 'https://github.com/rosettastone/RSTCoreDataKit.gi
 #import <RSTCoreDataKit/RSTCoreDataKit.h>
 ````
 
-### Standing up your stack
+### Standing up your Core Data stack
 
 ````objective-c
 // Initialize the Core Data model, this class encapsulates the notion of a .xcdatamodeld file
@@ -57,10 +57,47 @@ RSTCoreDataStack *privateStack = [RSTCoreDataStack privateStackWithStoreURL:mode
 RSTCoreDataStack *inMemoryStack = [RSTCoreDataStack stackWithInMemoryStoreWithModelURL:model.modelURL];
 ````
 
+### Saving a managed object context
+
+````objective-c
+NSManagedObjectContext *context = /* some context */;
+BOOL success = [RSTCoreDataContextSaver saveAndWait:context];
+````
+
+### Deleting your store
+
+````objective-c
+RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"MyModelName"];
+[model removeExistingModelStore];
+````
+
+### Checking for Core Data migrations
+
+````objective-c
+RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"MyModelName"];
+BOOL needsMigration = [model modelStoreNeedsMigration];
+````
+
 ### Unit Testing
 
-`RSTCoreDataKit` has a suite of unit tests included. 
+`RSTCoreDataKit` has a suite of unit tests included. You can run them in the usual way from Xcode. 
 
+These tests are well commented and serve as further documentation for how to use this library.
+
+Additionally, **you should be unit testing your own Core Data model**. This test suite also serves as an example for how to test your own Core Data model layer.
+
+````objective-c
+// Create an in-memory store for testing purposes
+// You can create this before each test, and tear it down after
+RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"MyModelName"];
+RSTCoreDataStack *inMemoryStackForTesting = [RSTCoreDataStack stackWithInMemoryStoreWithModelURL:model.modelURL];
+
+// Alernatively, you could persist a store to disk for your tests
+RSTCoreDataStack *defaultStackForTesting = [RSTCoreDataStack defaultStackWithStoreURL:model.storeURL modelURL:model.modelURL];
+
+// Then remove the store as needed
+[model removeExistingModelStore];
+````
 
 ## Documentation
 
