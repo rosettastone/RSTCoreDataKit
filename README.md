@@ -44,6 +44,8 @@ RSTCoreDataStack *stack = [[RSTCoreDataStack alloc] initWithStoreURL:model.store
                                                             modelURL:model.modelURL
                                                              options:nil
                                                      concurrencyType:NSMainQueueConcurrencyType];
+
+// That's all!
 ````
 
 Alternatively, you can use the convenience initializers for common use cases.
