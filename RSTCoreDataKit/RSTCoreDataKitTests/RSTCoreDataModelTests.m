@@ -40,10 +40,13 @@
 
     XCTAssertEqualObjects(model.modelName, name);
     XCTAssertEqualObjects(model.bundle, bundle);
+
     XCTAssertNotNil(model.databaseFilename);
     XCTAssertNotNil(model.modelURL);
     XCTAssertNotNil(model.storeURL);
     XCTAssertNotNil(model.managedObjectModel);
+
+    XCTAssertFalse([model modelStoreNeedsMigration]);
 }
 
 @end

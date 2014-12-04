@@ -81,8 +81,6 @@
 
 - (BOOL)modelStoreNeedsMigration
 {
-    BOOL isCompatible = NO;
-
     NSManagedObjectModel *destinationModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:self.modelURL];
 
     NSError *error = nil;
@@ -90,13 +88,13 @@
                                                                                               URL:self.storeURL
                                                                                             error:&error];
     if (sourceMetaData != nil) {
-        isCompatible = [destinationModel isConfiguration:nil compatibleWithStoreMetadata:sourceMetaData];
+        return [destinationModel isConfiguration:nil compatibleWithStoreMetadata:sourceMetaData];
     }
     else {
         NSLog(@"*** %s Error checking persistent store coordinator meta data: %@", __PRETTY_FUNCTION__, error);
     }
 
-    return !isCompatible;
+    return NO;
 }
 
 - (void)removeExistingModelStore
