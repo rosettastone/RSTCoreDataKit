@@ -46,6 +46,10 @@ We conform to the following sets of guidelines. They compliment each other well 
 * Apple's [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
 * NYTimes [Objective-C Style Guide](https://github.com/NYTimes/objective-c-style-guide)
 
+#### Swift
+
+There are not clear style standards for Swift yet, but we encourage adhering the same principles established with Objective-C. Be sure your code is readable and easily understood — clarity always trumps brevity.
+
 ## License
 
 By contributing to any Rosetta Stone open source project, you agree that your contributions will be licensed under its BSD license.
