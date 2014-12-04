@@ -5,7 +5,7 @@ We actively welcome pull requests and encourage you to open issues on GitHub whe
 
 ## Project Organization
 
-We follow a [successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model). 
+We follow a [successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model) and use [Semantic Versioning](http://semver.org).
 
 * The `master` branch is always stable and release-ready. All releases are tagged from `master`.
 * The `develop` branch is the main branch for development, and is merged into `master` when stable and ready.
