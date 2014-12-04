@@ -20,7 +20,7 @@
 @import CoreData;
 
 /**
- *  The `RSTCoreDataFetcher` class provides convenience methods for common CoreData fetching operations.
+ *  The `RSTCoreDataFetcher` class provides convenience methods for common Core Data fetching operations.
  */
 @interface RSTCoreDataFetcher : NSObject
 

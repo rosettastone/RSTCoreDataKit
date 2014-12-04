@@ -20,14 +20,14 @@
 @import CoreData;
 
 /**
- *  The `RSTCoreDataStack` class encapsulates the entire CoreData stack for a SQLite store type.
+ *  The `RSTCoreDataStack` class encapsulates the entire Core Data stack for a SQLite store type.
  *  It manages the managed object model, the persistent store coordinator, and the main managed object context. 
  *  It provides convenience methods for initializing your stack for common use-cases as well as creating child contexts.
  */
 @interface RSTCoreDataStack : NSObject
 
 /**
- *  Returns the main managed object context for the CoreData stack.
+ *  Returns the main managed object context for the Core Data stack.
  */
 @property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
 
