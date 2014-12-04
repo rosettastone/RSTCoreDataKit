@@ -6,6 +6,10 @@
 
 CoreData sucks.
 
+* Notoriously difficult
+* Steep learning curve
+* Lots of boiler plate
+
 ## Requirements
 
 * iOS 8.0+
