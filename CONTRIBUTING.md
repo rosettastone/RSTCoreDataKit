@@ -22,7 +22,7 @@ We follow a [successful Git branching model](http://nvie.com/posts/a-successful-
 6. Ensure the test suite passes.
 7. Submit a pull request to the `develop` branch.
 
-**You should submit one pull request per feature.** Smaller pull requests are easiest to review and merge.
+**You should submit one pull request per feature or fix.** Smaller pull requests are easiest to review and merge.
 
 ## Issues
 
