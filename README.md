@@ -4,7 +4,7 @@
 
 ## About
 
-Apple's [Core Data](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html) framework is notoriously difficult to use, can have a steep learning curve, and involves a lot of boilerplate code just to get started. The goal of this library is to simplify standing up your Core Data stack so that you can quickly get started working on your model. It also provides utilities that make it easier to unit test your model layer.
+Apple's [Core Data](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html) framework is notoriously difficult to use, can have a steep learning curve, and involves a lot of boilerplate code just to get started. The goal of this library is to simplify standing up your Core Data stack with a focus on [SOLID](http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) design principles so that you can quickly get started working with your model. It also provides utilities that make it easier to unit test your model layer.
 
 *The Core Data Stack (via [objc.io](http://www.objc.io/issue-4/core-data-overview.html))*
 
@@ -131,6 +131,7 @@ Other useful resources:
 * Apple's [Core Data Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html)
 * objc.io's [Issue #4: Core Data](http://www.objc.io/issue-4/)
 * Ray Wenderlich's [Core Data Tutorial for iOS: Getting Started](http://www.raywenderlich.com/934/core-data-tutorial-for-ios-getting-started)
+* Other [Core Data Libraries & Utilities](http://nshipster.com/core-data-libraries-and-utilities/)
 
 ## Contributing
 
