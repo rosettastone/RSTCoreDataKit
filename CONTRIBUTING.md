@@ -1,0 +1,2 @@
+# Rosetta Stone Contributing Guidelines
+

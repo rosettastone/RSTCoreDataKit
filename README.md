@@ -129,6 +129,10 @@ Sweet documentation is [available here][docsLink] via [@CocoaDocs](https://twitt
 * Apple's [Core Data Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html)
 * objc.io's [Issue #4: Core Data](http://www.objc.io/issue-4/)
 
+## Contributing
+
+See `CONTRIBUTING.md`.
+
 ## License
 
 `RSTCoreDataKit` is released under the [BSD 3.0 License][bsdLink]. See `LICENSE` for details.
