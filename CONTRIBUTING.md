@@ -32,7 +32,7 @@ We use GitHub issues to track public bugs. Please ensure your description is cle
 2. If your issue exists, please comment on its thread with any information you have.
 3. Provide a detailed description, including the library version, affected platforms, and affected devices (where applicable).
 4. Provide clear steps to reproduce the issue.
-5. Provide screenshots, videos, or GIFs if necessary
+5. Provide screenshots, videos, or GIFs if needed.
 
 ## Coding Style
 
