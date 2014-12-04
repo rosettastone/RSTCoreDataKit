@@ -46,6 +46,11 @@
 @property (nonatomic, readonly) NSURL *storeURL;
 
 /**
+ *  The bundle in which the model is located.
+ */
+@property (nonatomic, readonly) NSBundle *bundle;
+
+/**
  *  Returns the managed object model for the model specified by modelName.
  */
 @property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;

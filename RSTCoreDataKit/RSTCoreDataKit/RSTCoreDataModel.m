@@ -32,6 +32,8 @@
     self = [super init];
     if (self) {
         _modelName = [modelName copy];
+        _bundle = bundle;
+        
         _databaseFilename = [NSString stringWithFormat:@"%@.sqlite", _modelName];
         _modelURL = [bundle URLForResource:_modelName withExtension:@"momd"];
 
