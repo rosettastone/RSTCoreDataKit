@@ -21,29 +21,15 @@
 
 @interface RSTCoreDataStackTests : RSTCoreDataKitTestCase
 
-@property (nonatomic, strong) RSTCoreDataModel *model;
-
 @end
 
 
 @implementation RSTCoreDataStackTests
 
-- (void)setUp
-{
-    [super setUp];
-    self.model = [[RSTCoreDataModel alloc] initWithName:@"TestModel" bundle:[NSBundle bundleForClass:[self class]]];
-}
-
-- (void)tearDown
-{
-    [self.model removeExistingModelStore];
-    [super tearDown];
-}
-
 - (void)testCoreDataStackInit
 {
     // GIVEN: a core data model
-    RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"TestModel" bundle:[NSBundle bundleForClass:[self class]]];
+    RSTCoreDataModel *model = self.testModel;
 
     // WHEN: we init a core data stack
     RSTCoreDataStack *stack = [[RSTCoreDataStack alloc] initWithStoreURL:model.storeURL
@@ -61,7 +47,7 @@
 - (void)testCoreDataStackInitInMemory
 {
     // GIVEN: a core data model
-    RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"TestModel" bundle:[NSBundle bundleForClass:[self class]]];
+    RSTCoreDataModel *model = self.testModel;
 
     // WHEN: we init an in-memory core data stack
     RSTCoreDataStack *stack = [RSTCoreDataStack stackWithInMemoryStoreWithModelURL:model.modelURL];
@@ -75,7 +61,7 @@
 - (void)testCoreDataStackInitPrivateQueue
 {
     // GIVEN: a core data model
-    RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"TestModel" bundle:[NSBundle bundleForClass:[self class]]];
+    RSTCoreDataModel *model = self.testModel;
 
     // WHEN: we init a private queue core data stack
     RSTCoreDataStack *stack = [RSTCoreDataStack privateStackWithStoreURL:model.storeURL modelURL:model.modelURL];

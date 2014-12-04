@@ -34,6 +34,7 @@
 #import "Employee.h"
 #import "Company.h"
 
+
 @interface RSTCoreDataKitTestCase : XCTestCase
 
 @property (nonatomic, readonly) RSTCoreDataModel *testModel;

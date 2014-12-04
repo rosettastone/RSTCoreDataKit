@@ -167,8 +167,6 @@
 				323EC10F1A2E8695003C12EF /* RSTCoreDataContextDidSaveListenerTests.m */,
 				321527D31A2F851E00A08FD8 /* RSTCoreDataContextSaverTests.m */,
 				321527D51A2F905A00A08FD8 /* RSTCoreDataFetcherTests.m */,
-				323EC1151A2E8784003C12EF /* RSTCoreDataKitTestCase.h */,
-				323EC1161A2E8784003C12EF /* RSTCoreDataKitTestCase.m */,
 				32ED78BC1A31187900A579E9 /* RSTCoreDataMigrationManagerTests.m */,
 				321527D71A2F9ADC00A08FD8 /* RSTCoreDataModelTests.m */,
 				321527D91A2FAAA400A08FD8 /* RSTCoreDataStackTests.m */,
@@ -193,6 +191,8 @@
 				32ED78BF1A311A5D00A579E9 /* Company.m */,
 				32ED78C11A311A7800A579E9 /* Employee.h */,
 				32ED78C21A311A7800A579E9 /* Employee.m */,
+				323EC1151A2E8784003C12EF /* RSTCoreDataKitTestCase.h */,
+				323EC1161A2E8784003C12EF /* RSTCoreDataKitTestCase.m */,
 				323EC11A1A2E8B45003C12EF /* TestModel.xcdatamodeld */,
 			);
 			name = "Test Fixtures";

@@ -29,6 +29,7 @@
 
 - (void)tearDown
 {
+    [_testModel removeExistingModelStore];
     _testModel = nil;
     _testStack = nil;
     [super tearDown];
