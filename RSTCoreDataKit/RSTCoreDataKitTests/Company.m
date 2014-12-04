@@ -16,16 +16,13 @@
 //  Released under a BSD license: http://opensource.org/licenses/BSD-3-Clause
 //
 
-#import "Employee.h"
 #import "Company.h"
+#import "Employee.h"
 
 
-@implementation Employee
+@implementation Company
 
-@dynamic birthdate;
-@dynamic employeeId;
-@dynamic firstName;
-@dynamic lastName;
-@dynamic company;
+@dynamic name;
+@dynamic employees;
 
 @end

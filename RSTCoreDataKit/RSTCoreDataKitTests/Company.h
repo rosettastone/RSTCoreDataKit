@@ -19,14 +19,19 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Company;
+@class Employee;
 
-@interface Employee : NSManagedObject
+@interface Company : NSManagedObject
 
-@property (nonatomic, retain) NSDate * birthdate;
-@property (nonatomic, retain) NSNumber * employeeId;
-@property (nonatomic, retain) NSString * firstName;
-@property (nonatomic, retain) NSString * lastName;
-@property (nonatomic, retain) Company *company;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSSet *employees;
+@end
+
+@interface Company (CoreDataGeneratedAccessors)
+
+- (void)addEmployeesObject:(Employee *)value;
+- (void)removeEmployeesObject:(Employee *)value;
+- (void)addEmployees:(NSSet *)values;
+- (void)removeEmployees:(NSSet *)values;
 
 @end
