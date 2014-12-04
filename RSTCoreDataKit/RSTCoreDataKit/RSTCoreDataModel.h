@@ -20,13 +20,13 @@
 @import CoreData;
 
 /**
- *  The `RSTCoreDataModel` class represents a CoreData model. 
+ *  The `RSTCoreDataModel` class represents a Core Data model.
  *  It provides the model and store URLs as well as convenience methods for interacting with the store.
  */
 @interface RSTCoreDataModel : NSObject
 
 /**
- *  Returns the model name of the CoreData model resource.
+ *  Returns the model name of the Core Data model resource.
  */
 @property (nonatomic, readonly) NSString *modelName;
 
@@ -45,13 +45,18 @@
  */
 @property (nonatomic, readonly) NSURL *storeURL;
 
+/**
+ *  Returns the managed object model for the model specified by modelName.
+ */
+@property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
+
 #pragma mark - Init
 
 /**
  *  Initializes and returns a new `RSTCoreDataModel` object for the specified modelName and bundle.
  *
- *  @param modelName The name of the CoreData model. This value must not be `nil`.
- *  @param bundle    The bundle in which the CoreData model is located. This value must not be `nil`.
+ *  @param modelName The name of the Core Data model. This value must not be `nil`.
+ *  @param bundle    The bundle in which the Core Data model is located. This value must not be `nil`.
  *
  *  @return An initialized `RSTCoreDataModel` if successful, `nil` otherwise.
  */
@@ -61,7 +66,7 @@
  *  Initializes and returns a new `RSTCoreDataModel` object for the specified modelName for 
  *  a model that is located in the Application's main bundle.
  *
- *  @param modelName The name of the CoreData model. This value must not be `nil`.
+ *  @param modelName The name of the Core Data model. This value must not be `nil`.
  *
  *  @return An initialized `RSTCoreDataModel` if successful, `nil` otherwise.
  */

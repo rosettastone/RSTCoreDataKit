@@ -41,6 +41,7 @@
     XCTAssertNotNil(model.databaseFilename);
     XCTAssertNotNil(model.modelURL);
     XCTAssertNotNil(model.storeURL);
+    XCTAssertNotNil(model.managedObjectModel);
 }
 
 @end

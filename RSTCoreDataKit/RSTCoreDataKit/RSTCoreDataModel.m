@@ -20,6 +20,8 @@
 
 @implementation RSTCoreDataModel
 
+@synthesize managedObjectModel = _managedObjectModel;
+
 #pragma mark - Init
 
 - (instancetype)initWithName:(NSString *)modelName bundle:(NSBundle *)bundle
@@ -61,6 +63,16 @@
 {
     return [NSString stringWithFormat:@"<%@: modelName=%@, needsMigration=%@, databaseFilename=%@, modelURL=%@, storeURL=%@>",
             [self class], self.modelName, @([self modelStoreNeedsMigration]), self.databaseFilename, self.modelURL, self.storeURL];
+}
+
+#pragma mark - Getters
+
+- (NSManagedObjectModel *)managedObjectModel
+{
+    if (_managedObjectModel == nil) {
+        _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:self.modelURL];
+    }
+    return _managedObjectModel;
 }
 
 #pragma mark - Model
