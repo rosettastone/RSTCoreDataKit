@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="1.0" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Company" representedClassName="Company" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="employees" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Employee" inverseName="company" inverseEntity="Employee" syncable="YES"/>
@@ -12,7 +12,7 @@
         <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="employees" inverseEntity="Company" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Employee" positionX="126" positionY="26" width="128" height="118"/>
         <element name="Company" positionX="-63" positionY="26" width="128" height="73"/>
+        <element name="Employee" positionX="126" positionY="26" width="128" height="118"/>
     </elements>
 </model>
