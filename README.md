@@ -4,11 +4,11 @@
 
 ## About
 
-*TODO*
+Apple's [Core Data]() framework is notoriously difficult to use, can have a steep learning curve, and involves a lot of boilerplate code just to get started. The goal is this library is to simplify standing up your Core Data stack so that you can quickly get started working on your model. It also provides utilies that make it easier to test your model code.
 
-* Notoriously difficult
-* Steep learning curve
-* Lots of boiler plate
+![stack img](http://www.objc.io/images/issue-4/stack-simple.png)
+
+*Core Data Stack, via [objc.io](http://www.objc.io/issue-4/core-data-overview.html)*
 
 ## Requirements
 
