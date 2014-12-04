@@ -64,7 +64,7 @@ RSTCoreDataStack *inMemoryStack = [RSTCoreDataStack stackWithInMemoryStoreWithMo
 ### Saving a managed object context
 
 ````objective-c
-NSManagedObjectContext *context = /* some context */;
+NSManagedObjectContext *context = /* an initialized parent or child context */;
 BOOL success = [RSTCoreDataContextSaver saveAndWait:context];
 ````
 
@@ -75,11 +75,26 @@ RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"MyModelName"]
 [model removeExistingModelStore];
 ````
 
-### Checking for Core Data migrations
+### Checking migrations
 
 ````objective-c
 RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"MyModelName"];
 BOOL needsMigration = [model modelStoreNeedsMigration];
+````
+
+### Using child contexts
+
+````objective-c
+RSTCoreDataStack *stack = /* an initialized stack */;
+
+// Create a child context on a private queue
+NSManagedObjectContext *privateChildContext = [stack newDefaultPrivateChildContext];
+
+// Listen for saves from the child context
+RSTCoreDataContextDidSaveListener *listener = [[RSTCoreDataContextDidSaveListener alloc] initWithHandler:^(NSNotification *notification) {
+    // child context was saved
+    // handle here, merge with parent context, etc.
+} forManagedObjectContext:privateChildContext];
 ````
 
 ### Unit Testing
@@ -88,7 +103,7 @@ BOOL needsMigration = [model modelStoreNeedsMigration];
 
 These tests are well commented and serve as further documentation for how to use this library.
 
-Additionally, **you should be unit testing your own Core Data model**. This test suite also serves as an example for how to test your own Core Data model layer.
+Additionally, **you should be unit testing your own Core Data model layer**. This test suite also serves as an example for how to do this.
 
 ````objective-c
 // Create an in-memory store for testing purposes
