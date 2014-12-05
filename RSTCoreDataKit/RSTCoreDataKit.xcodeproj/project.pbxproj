@@ -36,6 +36,7 @@
 		32ED78BD1A31187900A579E9 /* RSTCoreDataMigrationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ED78BC1A31187900A579E9 /* RSTCoreDataMigrationManagerTests.m */; };
 		32ED78C01A311A5D00A579E9 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ED78BF1A311A5D00A579E9 /* Company.m */; };
 		32ED78C31A311A7800A579E9 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ED78C21A311A7800A579E9 /* Employee.m */; };
+		32ED78C51A3145E400A579E9 /* RSTCoreDataKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 321EC5551A2E35BA0069C2C1 /* RSTCoreDataKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,19 @@
 			remoteInfo = RSTCoreDataKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		32ED78C41A3145D000A579E9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				32ED78C51A3145E400A579E9 /* RSTCoreDataKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		321527D11A2F806900A08FD8 /* NSManagedObjectExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSManagedObjectExtensionsTests.m; sourceTree = "<group>"; };
@@ -244,6 +258,7 @@
 				321EC55C1A2E35BA0069C2C1 /* Sources */,
 				321EC55D1A2E35BA0069C2C1 /* Frameworks */,
 				321EC55E1A2E35BA0069C2C1 /* Resources */,
+				32ED78C41A3145D000A579E9 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -261,6 +276,7 @@
 		321EC54C1A2E35BA0069C2C1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = RST;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Rosetta Stone";
 				TargetAttributes = {
