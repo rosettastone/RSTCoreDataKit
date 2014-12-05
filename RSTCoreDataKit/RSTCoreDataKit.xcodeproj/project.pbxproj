@@ -13,8 +13,6 @@
 		321527D81A2F9ADC00A08FD8 /* RSTCoreDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 321527D71A2F9ADC00A08FD8 /* RSTCoreDataModelTests.m */; };
 		321527DA1A2FAAA400A08FD8 /* RSTCoreDataStackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 321527D91A2FAAA400A08FD8 /* RSTCoreDataStackTests.m */; };
 		321EC55B1A2E35BA0069C2C1 /* RSTCoreDataKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC55A1A2E35BA0069C2C1 /* RSTCoreDataKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		321EC5A71A2E4BA60069C2C1 /* RSTCoreDataKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */; };
-		321EC5AB1A2E4D1B0069C2C1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 321EC5AA1A2E4D1B0069C2C1 /* LICENSE */; };
 		321EC5B81A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC5AC1A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.h */; };
 		321EC5B91A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EC5AD1A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.m */; };
 		321EC5BA1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 321EC5AE1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.h */; };
@@ -73,9 +71,6 @@
 		321EC55A1A2E35BA0069C2C1 /* RSTCoreDataKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataKit.h; sourceTree = "<group>"; };
 		321EC5601A2E35BA0069C2C1 /* RSTCoreDataKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSTCoreDataKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		321EC5661A2E35BA0069C2C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RSTCoreDataKit.podspec; path = /Users/jsquires/workspace/RSTCoreDataKit/RSTCoreDataKit.podspec; sourceTree = "<absolute>"; };
-		321EC5A81A2E4BAD0069C2C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		321EC5AA1A2E4D1B0069C2C1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		321EC5AC1A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+RSTCoreDataKit.h"; sourceTree = "<group>"; };
 		321EC5AD1A2E51760069C2C1 /* NSManagedObject+RSTCoreDataKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+RSTCoreDataKit.m"; sourceTree = "<group>"; };
 		321EC5AE1A2E51760069C2C1 /* RSTCoreDataContextDidSaveListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataContextDidSaveListener.h; sourceTree = "<group>"; };
@@ -92,7 +87,6 @@
 		323EC1151A2E8784003C12EF /* RSTCoreDataKitTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataKitTestCase.h; sourceTree = "<group>"; };
 		323EC1161A2E8784003C12EF /* RSTCoreDataKitTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataKitTestCase.m; sourceTree = "<group>"; };
 		323EC11B1A2E8B45003C12EF /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
-		32ED78B61A30E2AD00A579E9 /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
 		32ED78B81A3104A800A579E9 /* RSTCoreDataMigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTCoreDataMigrationManager.h; sourceTree = "<group>"; };
 		32ED78B91A3104A800A579E9 /* RSTCoreDataMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataMigrationManager.m; sourceTree = "<group>"; };
 		32ED78BC1A31187900A579E9 /* RSTCoreDataMigrationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTCoreDataMigrationManagerTests.m; sourceTree = "<group>"; };
@@ -125,10 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				321EC5571A2E35BA0069C2C1 /* RSTCoreDataKit */,
-				321EC5A61A2E4BA60069C2C1 /* RSTCoreDataKit.podspec */,
-				321EC5AA1A2E4D1B0069C2C1 /* LICENSE */,
-				321EC5A81A2E4BAD0069C2C1 /* README.md */,
-				32ED78B61A30E2AD00A579E9 /* CONTRIBUTING.md */,
 				321EC5641A2E35BA0069C2C1 /* RSTCoreDataKitTests */,
 				321EC5561A2E35BA0069C2C1 /* Products */,
 			);
@@ -311,8 +301,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				321EC5AB1A2E4D1B0069C2C1 /* LICENSE in Resources */,
-				321EC5A71A2E4BA60069C2C1 /* RSTCoreDataKit.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
