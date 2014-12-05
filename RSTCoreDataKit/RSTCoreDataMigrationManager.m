@@ -90,7 +90,7 @@
         return NO;
     }
     
-    NSManagedObjectModel *sourceModel = [NSManagedObjectModel mergedModelFromBundles:nil//@[ self.model.bundle ]
+    NSManagedObjectModel *sourceModel = [NSManagedObjectModel mergedModelFromBundles:@[ self.model.bundle ]
                                                                     forStoreMetadata:sourceMetadata];
     NSArray *modelPaths = [self modelPathsForAllModelVersions];
     if (modelPaths == nil) {
@@ -111,7 +111,7 @@
 
         if (![targetModel isEqual:sourceModel] && ![[targetModel entityVersionHashesByName] isEqual:[sourceModel entityVersionHashesByName]]) {
 
-            mappingModel = [NSMappingModel mappingModelFromBundles:nil//@[ self.model.bundle ]
+            mappingModel = [NSMappingModel mappingModelFromBundles:@[ self.model.bundle ]
                                                     forSourceModel:sourceModel
                                                   destinationModel:targetModel];
 

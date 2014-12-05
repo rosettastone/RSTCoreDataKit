@@ -20,6 +20,10 @@
 
 #import "RSTCoreDataKit.h"
 
+#import "Company.h"
+#import "Employee.h"
+
+
 @interface ViewController : UITableViewController <RSTCoreDataMigrationManagerDelegate>
 
 @property (strong, nonatomic) RSTCoreDataModel *model;
@@ -27,6 +31,12 @@
 @property (strong, nonatomic) RSTCoreDataStack *stack;
 
 @property (strong, nonatomic) RSTCoreDataMigrationManager *migrationManager;
+
+// fake data
+
+@property (strong, nonatomic) Company *company;
+
+@property (strong, nonatomic) NSArray *employees;
 
 @end
 
