@@ -30,7 +30,6 @@
 {
     self.model = [[RSTCoreDataModel alloc] initWithName:@"Example"];
     self.stack = [RSTCoreDataStack defaultStackWithStoreURL:self.model.storeURL modelURL:self.model.modelURL];
-    self.migrationManager = [[RSTCoreDataMigrationManager alloc] initWithModel:self.model storeType:NSSQLiteStoreType];
 }
 
 - (void)setupFakeData

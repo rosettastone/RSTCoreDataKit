@@ -26,7 +26,5 @@
 
 @property (strong, nonatomic) RSTCoreDataStack *stack;
 
-@property (strong, nonatomic) RSTCoreDataMigrationManager *migrationManager;
-
 @end
 
