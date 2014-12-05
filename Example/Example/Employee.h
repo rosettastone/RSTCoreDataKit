@@ -21,12 +21,12 @@
 
 @class Company;
 
-@interface Empolyee : NSManagedObject
+@interface Employee : NSManagedObject
 
-@property (nonatomic, retain) NSString * firstName;
-@property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) NSDate * birthDate;
 @property (nonatomic, retain) NSNumber * employeeId;
+@property (nonatomic, retain) NSString * firstName;
+@property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) Company *company;
 
 @end

@@ -19,7 +19,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Empolyee;
+@class Employee;
 
 @interface Company : NSManagedObject
 
@@ -29,8 +29,8 @@
 
 @interface Company (CoreDataGeneratedAccessors)
 
-- (void)addEmployeesObject:(Empolyee *)value;
-- (void)removeEmployeesObject:(Empolyee *)value;
+- (void)addEmployeesObject:(Employee *)value;
+- (void)removeEmployeesObject:(Employee *)value;
 - (void)addEmployees:(NSSet *)values;
 - (void)removeEmployees:(NSSet *)values;
 

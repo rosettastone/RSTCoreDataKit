@@ -17,7 +17,7 @@
 //
 
 #import "Company.h"
-#import "Empolyee.h"
+#import "Employee.h"
 
 
 @implementation Company

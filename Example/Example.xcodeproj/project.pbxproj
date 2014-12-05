@@ -15,8 +15,8 @@
 		320F277B1A3238A4007F4D85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 320F277A1A3238A4007F4D85 /* Images.xcassets */; };
 		320F277E1A3238A4007F4D85 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320F277C1A3238A4007F4D85 /* LaunchScreen.xib */; };
 		320F278A1A3238A4007F4D85 /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 320F27891A3238A4007F4D85 /* ExampleTests.m */; };
-		320F27981A323D07007F4D85 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 320F27971A323D07007F4D85 /* Company.m */; };
-		320F279B1A323F1B007F4D85 /* Empolyee.m in Sources */ = {isa = PBXBuildFile; fileRef = 320F279A1A323F1B007F4D85 /* Empolyee.m */; };
+		320F27A41A32425E007F4D85 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 320F27A31A32425E007F4D85 /* Company.m */; };
+		320F27A71A32425F007F4D85 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 320F27A61A32425F007F4D85 /* Employee.m */; };
 		FE1B0F0028DC885EF534B0FD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 548599679FF1DFE34EA80159 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,10 +45,10 @@
 		320F27831A3238A4007F4D85 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		320F27881A3238A4007F4D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		320F27891A3238A4007F4D85 /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
-		320F27961A323D07007F4D85 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
-		320F27971A323D07007F4D85 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
-		320F27991A323F1B007F4D85 /* Empolyee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Empolyee.h; sourceTree = "<group>"; };
-		320F279A1A323F1B007F4D85 /* Empolyee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Empolyee.m; sourceTree = "<group>"; };
+		320F27A21A32425E007F4D85 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		320F27A31A32425E007F4D85 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		320F27A51A32425F007F4D85 /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		320F27A61A32425F007F4D85 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		548599679FF1DFE34EA80159 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C3CA12CAADDDC207F7C10B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FDE105CFD191CC7FFD40BE83 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,11 +98,11 @@
 			children = (
 				320F276E1A3238A4007F4D85 /* AppDelegate.h */,
 				320F276F1A3238A4007F4D85 /* AppDelegate.m */,
-				320F27961A323D07007F4D85 /* Company.h */,
-				320F27971A323D07007F4D85 /* Company.m */,
+				320F27A21A32425E007F4D85 /* Company.h */,
+				320F27A31A32425E007F4D85 /* Company.m */,
+				320F27A51A32425F007F4D85 /* Employee.h */,
+				320F27A61A32425F007F4D85 /* Employee.m */,
 				320F27711A3238A4007F4D85 /* Example.xcdatamodeld */,
-				320F27991A323F1B007F4D85 /* Empolyee.h */,
-				320F279A1A323F1B007F4D85 /* Empolyee.m */,
 				320F277A1A3238A4007F4D85 /* Images.xcassets */,
 				320F277C1A3238A4007F4D85 /* LaunchScreen.xib */,
 				320F27771A3238A4007F4D85 /* Main.storyboard */,
@@ -292,10 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				320F27981A323D07007F4D85 /* Company.m in Sources */,
 				320F27701A3238A4007F4D85 /* AppDelegate.m in Sources */,
+				320F27A41A32425E007F4D85 /* Company.m in Sources */,
 				320F27731A3238A4007F4D85 /* Example.xcdatamodeld in Sources */,
-				320F279B1A323F1B007F4D85 /* Empolyee.m in Sources */,
+				320F27A71A32425F007F4D85 /* Employee.m in Sources */,
 				320F27761A3238A4007F4D85 /* ViewController.m in Sources */,
 				320F276D1A3238A4007F4D85 /* main.m in Sources */,
 			);

@@ -16,16 +16,16 @@
 //  Released under a BSD license: http://opensource.org/licenses/BSD-3-Clause
 //
 
-#import "Empolyee.h"
+#import "Employee.h"
 #import "Company.h"
 
 
-@implementation Empolyee
+@implementation Employee
 
-@dynamic firstName;
-@dynamic lastName;
 @dynamic birthDate;
 @dynamic employeeId;
+@dynamic firstName;
+@dynamic lastName;
 @dynamic company;
 
 @end

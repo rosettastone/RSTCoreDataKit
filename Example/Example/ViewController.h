@@ -18,8 +18,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "RSTCoreDataKit.h"
 
+@interface ViewController : UITableViewController
+
+@property (strong, nonatomic) RSTCoreDataModel *model;
+
+@property (strong, nonatomic) RSTCoreDataStack *stack;
+
+@property (strong, nonatomic) RSTCoreDataMigrationManager *migrationManager;
 
 @end
 
