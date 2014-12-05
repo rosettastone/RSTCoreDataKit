@@ -16,13 +16,13 @@
 //  Released under a BSD license: http://opensource.org/licenses/BSD-3-Clause
 //
 
-#import "AppDelegate.h"
+#import "Company.h"
+#import "Empolyee.h"
 
-@implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    return YES;
-}
+@implementation Company
+
+@dynamic name;
+@dynamic employees;
 
 @end
