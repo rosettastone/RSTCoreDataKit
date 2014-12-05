@@ -23,22 +23,39 @@
 
 @implementation RSTCoreDataMigrationManager
 
-#pragma mark - Public
+#pragma mark - Init
 
-- (BOOL)migrateModel:(RSTCoreDataModel *)model
+- (instancetype)initWithModel:(RSTCoreDataModel *)model storeType:(NSString *)storeType
 {
-    return [self migrateModel:model withStoreType:NSSQLiteStoreType];
+    NSParameterAssert(model != nil);
+    NSParameterAssert(storeType != nil);
+    
+    self = [super init];
+    if (self) {
+        _model = model;
+        _storeType = [storeType copy];
+    }
+    return self;
 }
 
-- (BOOL)migrateModel:(RSTCoreDataModel *)model withStoreType:(NSString *)storeType
+#pragma mark - NSObject
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@: model=%@, storeType=%@>", [self class], self.model, self.storeType];
+}
+
+#pragma mark - Public
+
+- (void)beginMigratingModel
 {
     __block UIBackgroundTaskIdentifier backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [[UIApplication sharedApplication] endBackgroundTask:backgroundTask];
     }];
-
+    
     __block NSError *error = nil;
-    BOOL success = [self progressivelyMigrateModel:model withStoretype:storeType error:&error];
-
+    BOOL success = [self progressivelyMigrateModelError:&error];
+    
     if (![NSThread isMainThread]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.delegate migrationManager:self didSucceed:success withError:error];
@@ -47,107 +64,107 @@
     else {
         [self.delegate migrationManager:self didSucceed:success withError:error];
     }
-
+    
     [[UIApplication sharedApplication] endBackgroundTask:backgroundTask];
-    return success;
 }
 
 #pragma mark - Private
 
-- (BOOL)progressivelyMigrateModel:(RSTCoreDataModel *)model
-                    withStoretype:(NSString *)storeType
-                            error:(NSError **)error
+- (BOOL)progressivelyMigrateModelError:(NSError **)error
 {
-    if (![model modelStoreNeedsMigration]) {
+    if (![self.model modelStoreNeedsMigration]) {
         return YES;
     }
-
-    if (![[NSFileManager defaultManager] fileExistsAtPath:model.storeURL.path]) {
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:self.model.storeURL.path]) {
         //  there is no file, so one will be created
         return YES;
     }
-
-    NSDictionary *sourceMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:storeType URL:model.storeURL error:error];
+    
+    NSDictionary *sourceMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:self.storeType URL:self.model.storeURL error:error];
     if (sourceMetadata == nil) {
         return NO;
     }
-
-    NSManagedObjectModel *sourceModel = [NSManagedObjectModel mergedModelFromBundles:nil forStoreMetadata:sourceMetadata];
-    NSArray *modelPaths = [self modelPathsInDeploymentDirectory:model.modelURL.path];
+    
+    NSManagedObjectModel *sourceModel = [NSManagedObjectModel mergedModelFromBundles:@[ self.model.bundle ] forStoreMetadata:sourceMetadata];
+    NSArray *modelPaths = [self modelPathsForAllModelVersions];
     if (modelPaths == nil) {
         return NO;
     }
-
+    
     NSMappingModel *mappingModel = nil;
     NSManagedObjectModel *targetModel = nil;
     NSString *modelPath = nil;
-
+    
     for (NSString *path in modelPaths) {
         targetModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]];
-
+        
         if (![targetModel isEqual:sourceModel] && ![[targetModel entityVersionHashesByName] isEqual:[sourceModel entityVersionHashesByName]]) {
-            mappingModel = [NSMappingModel mappingModelFromBundles:nil
+            
+            mappingModel = [NSMappingModel mappingModelFromBundles:@[ self.model.bundle ]
                                                     forSourceModel:sourceModel
                                                   destinationModel:targetModel];
-
+            
             if (mappingModel != nil) {
                 modelPath = path;
                 break;
             }
         }
     }
-
+    
     if (mappingModel == nil) {
         return NO;
     }
-
-    [self performCheckpointStoreWithSourceModel:sourceModel sourceStoreURL:model.storeURL];
-
+    
+    [self performCheckpointStoreWithSourceModel:sourceModel sourceStoreURL:self.model.storeURL];
+    
     NSString *storePath = [NSString stringWithFormat:@"%@.%@.%@",
-                           [model.storeURL.path stringByDeletingPathExtension], [[NSProcessInfo processInfo] globallyUniqueString], model.storeURL.path.pathExtension];
-
+                           [self.model.storeURL.path stringByDeletingPathExtension], [[NSProcessInfo processInfo] globallyUniqueString], self.model.storeURL.path.pathExtension];
+    
     NSURL *destinationStoreURL = [NSURL fileURLWithPath:storePath];
-
+    
     NSMigrationManager *manager = [[NSMigrationManager alloc] initWithSourceModel:sourceModel destinationModel:targetModel];
-    BOOL success = [manager migrateStoreFromURL:model.storeURL
-                                           type:storeType
+    BOOL success = [manager migrateStoreFromURL:self.model.storeURL
+                                           type:self.storeType
                                         options:nil
                                withMappingModel:mappingModel
                                toDestinationURL:destinationStoreURL
-                                destinationType:storeType
+                                destinationType:self.storeType
                              destinationOptions:nil
                                           error:error];
-
+    
     if (!success) {
         return NO;
     }
-
-    [self backupAndReplaceStoreAtURL:model.storeURL withStoreAtURL:destinationStoreURL error:error];
-
-    return [self progressivelyMigrateModel:model withStoretype:storeType error:error];
+    
+    [self backupAndReplaceStoreAtURL:self.model.storeURL withStoreAtURL:destinationStoreURL error:error];
+    
+    return [self progressivelyMigrateModelError:error];
 }
 
 - (void)performCheckpointStoreWithSourceModel:(NSManagedObjectModel *)sourceModel sourceStoreURL:(NSURL *)sourceStoreURL
 {
     NSPersistentStoreCoordinator *persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:sourceModel];
     
-    [persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+    NSDictionary *options = [self.storeType isEqualToString:NSSQLiteStoreType] ? @{ NSSQLitePragmasOption: @{ @"journal_mode": @"DELETE"} } : nil;
+    
+    [persistentStoreCoordinator addPersistentStoreWithType:self.storeType
                                              configuration:nil
                                                        URL:sourceStoreURL
-                                                   options:@{ NSSQLitePragmasOption: @{ @"journal_mode": @"DELETE"} }
+                                                   options:options
                                                      error:nil];
-
+    
     [persistentStoreCoordinator removePersistentStore:[persistentStoreCoordinator persistentStoreForURL:sourceStoreURL] error:nil];
 }
 
-- (NSArray *)modelPathsInDeploymentDirectory:(NSString *)momdPath
+- (NSArray *)modelPathsForAllModelVersions
 {
-    NSString *resourceSubpath = [momdPath lastPathComponent];
-    NSArray *array = [[NSBundle mainBundle] pathsForResourcesOfType:@"mom" inDirectory:resourceSubpath];
+    NSString *resourceSubpath = [self.model.modelURL.path lastPathComponent];
+    NSArray *array = [self.model.bundle pathsForResourcesOfType:@"mom" inDirectory:resourceSubpath];
     if (array.count == 0) {
         return nil;
     }
-
+    
     return array;
 }
 
@@ -155,19 +172,19 @@
 {
     NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
     NSString *backupPath = [NSTemporaryDirectory() stringByAppendingPathComponent:guid];
-
+    
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if (![fileManager moveItemAtPath:sourceURL.path toPath:backupPath error:error]) {
         return NO;
     }
-
+    
     if (![fileManager moveItemAtPath:destinationURL.path toPath:sourceURL.path error:error]) {
         [fileManager moveItemAtPath:backupPath
                              toPath:sourceURL.path
                               error:nil];
         return NO;
     }
-
+    
     return YES;
 }
 

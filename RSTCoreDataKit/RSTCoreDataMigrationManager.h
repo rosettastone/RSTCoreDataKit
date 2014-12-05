@@ -35,10 +35,16 @@
 
 @interface RSTCoreDataMigrationManager : NSObject
 
+@property (nonatomic, readonly) RSTCoreDataModel *model;
+
+@property (nonatomic, readonly) NSString *storeType;
+
 @property (weak, nonatomic) id<RSTCoreDataMigrationManagerDelegate> delegate;
 
-- (BOOL)migrateModel:(RSTCoreDataModel *)model;
+- (instancetype)initWithModel:(RSTCoreDataModel *)model storeType:(NSString *)storeType NS_DESIGNATED_INITIALIZER;
 
-- (BOOL)migrateModel:(RSTCoreDataModel *)model withStoreType:(NSString *)storeType;
+- (id)init NS_UNAVAILABLE;
+
+- (void)beginMigratingModel;
 
 @end
