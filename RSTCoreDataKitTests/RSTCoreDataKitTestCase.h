@@ -22,7 +22,6 @@
 #import "RSTCoreDataModel.h"
 #import "RSTCoreDataStack.h"
 
-#import "RSTCoreDataMigrationManager.h"
 #import "RSTCoreDataContextSaver.h"
 #import "RSTCoreDataFetcher.h"
 #import "RSTCoreDataContextDidSaveListener.h"
