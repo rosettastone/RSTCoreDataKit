@@ -24,6 +24,7 @@
 @interface Company : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSDecimalNumber * profits;
 @property (nonatomic, retain) NSSet *employees;
 @end
 

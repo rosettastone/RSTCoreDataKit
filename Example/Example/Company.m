@@ -23,6 +23,7 @@
 @implementation Company
 
 @dynamic name;
+@dynamic profits;
 @dynamic employees;
 
 @end

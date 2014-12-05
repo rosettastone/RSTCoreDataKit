@@ -26,6 +26,7 @@
 @dynamic employeeId;
 @dynamic firstName;
 @dynamic lastName;
+@dynamic position;
 @dynamic company;
 
 @end

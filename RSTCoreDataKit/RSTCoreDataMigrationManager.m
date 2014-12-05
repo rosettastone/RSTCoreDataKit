@@ -49,6 +49,8 @@
 
 - (void)beginMigratingModel
 {
+    NSLog(@"%s.........", __PRETTY_FUNCTION__);
+
     __block UIBackgroundTaskIdentifier backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [[UIApplication sharedApplication] endBackgroundTask:backgroundTask];
     }];
@@ -72,6 +74,8 @@
 
 - (BOOL)progressivelyMigrateModelError:(NSError **)error
 {
+    NSLog(@"%s.........", __PRETTY_FUNCTION__);
+
     if (![self.model modelStoreNeedsMigration]) {
         return YES;
     }
@@ -86,7 +90,8 @@
         return NO;
     }
     
-    NSManagedObjectModel *sourceModel = [NSManagedObjectModel mergedModelFromBundles:@[ self.model.bundle ] forStoreMetadata:sourceMetadata];
+    NSManagedObjectModel *sourceModel = [NSManagedObjectModel mergedModelFromBundles:nil//@[ self.model.bundle ]
+                                                                    forStoreMetadata:sourceMetadata];
     NSArray *modelPaths = [self modelPathsForAllModelVersions];
     if (modelPaths == nil) {
         return NO;
@@ -95,15 +100,22 @@
     NSMappingModel *mappingModel = nil;
     NSManagedObjectModel *targetModel = nil;
     NSString *modelPath = nil;
-    
+
+    NSLog(@"SOURCE MODEL = %@, %@", sourceModel.versionIdentifiers, sourceModel);
+    NSLog(@"MODEL PATHS = %@", modelPaths);
+
     for (NSString *path in modelPaths) {
         targetModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]];
-        
+
+        NSLog(@"TARGET MODEL = %@, %@", targetModel.versionIdentifiers, targetModel);
+
         if (![targetModel isEqual:sourceModel] && ![[targetModel entityVersionHashesByName] isEqual:[sourceModel entityVersionHashesByName]]) {
-            
-            mappingModel = [NSMappingModel mappingModelFromBundles:@[ self.model.bundle ]
+
+            mappingModel = [NSMappingModel mappingModelFromBundles:nil//@[ self.model.bundle ]
                                                     forSourceModel:sourceModel
                                                   destinationModel:targetModel];
+
+            NSLog(@"FOUND MAPPING = %@", mappingModel);
             
             if (mappingModel != nil) {
                 modelPath = path;
@@ -111,7 +123,9 @@
             }
         }
     }
-    
+
+    NSLog(@"MAPPING MODEL = %@", mappingModel);
+
     if (mappingModel == nil) {
         return NO;
     }
@@ -144,6 +158,8 @@
 
 - (void)performCheckpointStoreWithSourceModel:(NSManagedObjectModel *)sourceModel sourceStoreURL:(NSURL *)sourceStoreURL
 {
+    NSLog(@"%s.........", __PRETTY_FUNCTION__);
+
     NSPersistentStoreCoordinator *persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:sourceModel];
     
     NSDictionary *options = [self.storeType isEqualToString:NSSQLiteStoreType] ? @{ NSSQLitePragmasOption: @{ @"journal_mode": @"DELETE"} } : nil;
@@ -159,6 +175,8 @@
 
 - (NSArray *)modelPathsForAllModelVersions
 {
+    NSLog(@"%s.........", __PRETTY_FUNCTION__);
+
     NSString *resourceSubpath = [self.model.modelURL.path lastPathComponent];
     NSArray *array = [self.model.bundle pathsForResourcesOfType:@"mom" inDirectory:resourceSubpath];
     if (array.count == 0) {
@@ -170,6 +188,8 @@
 
 - (BOOL)backupAndReplaceStoreAtURL:(NSURL *)sourceURL withStoreAtURL:(NSURL *)destinationURL error:(NSError **)error
 {
+    NSLog(@"%s.........", __PRETTY_FUNCTION__);
+
     NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
     NSString *backupPath = [NSTemporaryDirectory() stringByAppendingPathComponent:guid];
     

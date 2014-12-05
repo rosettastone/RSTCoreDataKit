@@ -20,7 +20,7 @@
 
 #import "RSTCoreDataKit.h"
 
-@interface ViewController : UITableViewController
+@interface ViewController : UITableViewController <RSTCoreDataMigrationManagerDelegate>
 
 @property (strong, nonatomic) RSTCoreDataModel *model;
 

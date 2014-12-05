@@ -31,6 +31,7 @@
     self.model = [[RSTCoreDataModel alloc] initWithName:@"Example"];
     self.stack = [RSTCoreDataStack defaultStackWithStoreURL:self.model.storeURL modelURL:self.model.modelURL];
     self.migrationManager = [[RSTCoreDataMigrationManager alloc] initWithModel:self.model storeType:NSSQLiteStoreType];
+    self.migrationManager.delegate = self;
 }
 
 - (void)setupFakeData
@@ -46,6 +47,13 @@
     [RSTCoreDataContextSaver saveAndWait:self.stack.managedObjectContext];
 }
 
+- (void)fetchData
+{
+    NSFetchRequest *fetch = [Employee rst_fetchRequest];
+    NSArray *results = [self.stack.managedObjectContext executeFetchRequest:fetch error:nil];
+    NSLog(@"RESULTS = %@", results);
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -54,7 +62,9 @@
 
     [self setupModel];
 
-    [self setupFakeData];
+//    [self setupFakeData];
+
+    NSLog(@"NEED MIGRATE = %@", @([self.model modelStoreNeedsMigration]));
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -66,10 +76,22 @@
 {
     [super viewDidAppear:animated];
 
-    NSFetchRequest *fetch = [Employee rst_fetchRequest];
-    NSArray *results = [self.stack.managedObjectContext executeFetchRequest:fetch error:nil];
+    [self.migrationManager beginMigratingModel];
 
-    NSLog(@"RESULTS = %@", results);
+//    [self fetchData];
+
+}
+
+#pragma mark - Migration manager delegate
+
+- (void)migrationManager:(RSTCoreDataMigrationManager *)migrationManager didSucceed:(BOOL)didSucceed withError:(NSError *)error
+{
+    NSLog(@"Migration done: %@, %@", @(didSucceed), error);
+
+    NSAssert(didSucceed, @"Migration should succeed");
+    NSAssert(error == nil, @"Migration should not error");
+
+    [self fetchData];
 }
 
 #pragma mark - Table view data source

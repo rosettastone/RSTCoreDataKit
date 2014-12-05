@@ -15,8 +15,9 @@
 		320F277B1A3238A4007F4D85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 320F277A1A3238A4007F4D85 /* Images.xcassets */; };
 		320F277E1A3238A4007F4D85 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320F277C1A3238A4007F4D85 /* LaunchScreen.xib */; };
 		320F278A1A3238A4007F4D85 /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 320F27891A3238A4007F4D85 /* ExampleTests.m */; };
-		320F27A41A32425E007F4D85 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 320F27A31A32425E007F4D85 /* Company.m */; };
-		320F27A71A32425F007F4D85 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 320F27A61A32425F007F4D85 /* Employee.m */; };
+		320F27AB1A3247D9007F4D85 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 320F27AA1A3247D9007F4D85 /* Company.m */; };
+		320F27AE1A3247DA007F4D85 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 320F27AD1A3247DA007F4D85 /* Employee.m */; };
+		320F27B21A324B5D007F4D85 /* MapV1toV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 320F27B11A324B5D007F4D85 /* MapV1toV2.xcmappingmodel */; };
 		FE1B0F0028DC885EF534B0FD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 548599679FF1DFE34EA80159 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,10 +46,12 @@
 		320F27831A3238A4007F4D85 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		320F27881A3238A4007F4D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		320F27891A3238A4007F4D85 /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
-		320F27A21A32425E007F4D85 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
-		320F27A31A32425E007F4D85 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
-		320F27A51A32425F007F4D85 /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
-		320F27A61A32425F007F4D85 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		320F27A81A324776007F4D85 /* ExampleV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleV2.xcdatamodel; sourceTree = "<group>"; };
+		320F27A91A3247D9007F4D85 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		320F27AA1A3247D9007F4D85 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		320F27AC1A3247DA007F4D85 /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		320F27AD1A3247DA007F4D85 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		320F27B11A324B5D007F4D85 /* MapV1toV2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MapV1toV2.xcmappingmodel; sourceTree = "<group>"; };
 		548599679FF1DFE34EA80159 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C3CA12CAADDDC207F7C10B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FDE105CFD191CC7FFD40BE83 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,10 +101,10 @@
 			children = (
 				320F276E1A3238A4007F4D85 /* AppDelegate.h */,
 				320F276F1A3238A4007F4D85 /* AppDelegate.m */,
-				320F27A21A32425E007F4D85 /* Company.h */,
-				320F27A31A32425E007F4D85 /* Company.m */,
-				320F27A51A32425F007F4D85 /* Employee.h */,
-				320F27A61A32425F007F4D85 /* Employee.m */,
+				320F27A91A3247D9007F4D85 /* Company.h */,
+				320F27AA1A3247D9007F4D85 /* Company.m */,
+				320F27AC1A3247DA007F4D85 /* Employee.h */,
+				320F27AD1A3247DA007F4D85 /* Employee.m */,
 				320F27711A3238A4007F4D85 /* Example.xcdatamodeld */,
 				320F277A1A3238A4007F4D85 /* Images.xcassets */,
 				320F277C1A3238A4007F4D85 /* LaunchScreen.xib */,
@@ -109,6 +112,7 @@
 				320F276A1A3238A4007F4D85 /* Supporting Files */,
 				320F27741A3238A4007F4D85 /* ViewController.h */,
 				320F27751A3238A4007F4D85 /* ViewController.m */,
+				320F27B11A324B5D007F4D85 /* MapV1toV2.xcmappingmodel */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -293,10 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				320F27701A3238A4007F4D85 /* AppDelegate.m in Sources */,
-				320F27A41A32425E007F4D85 /* Company.m in Sources */,
+				320F27AB1A3247D9007F4D85 /* Company.m in Sources */,
 				320F27731A3238A4007F4D85 /* Example.xcdatamodeld in Sources */,
-				320F27A71A32425F007F4D85 /* Employee.m in Sources */,
+				320F27AE1A3247DA007F4D85 /* Employee.m in Sources */,
 				320F27761A3238A4007F4D85 /* ViewController.m in Sources */,
+				320F27B21A324B5D007F4D85 /* MapV1toV2.xcmappingmodel in Sources */,
 				320F276D1A3238A4007F4D85 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,9 +514,10 @@
 		320F27711A3238A4007F4D85 /* Example.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				320F27A81A324776007F4D85 /* ExampleV2.xcdatamodel */,
 				320F27721A3238A4007F4D85 /* Example.xcdatamodel */,
 			);
-			currentVersion = 320F27721A3238A4007F4D85 /* Example.xcdatamodel */;
+			currentVersion = 320F27A81A324776007F4D85 /* ExampleV2.xcdatamodel */;
 			path = Example.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

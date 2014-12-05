@@ -27,6 +27,7 @@
 @property (nonatomic, retain) NSNumber * employeeId;
 @property (nonatomic, retain) NSString * firstName;
 @property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSString * position;
 @property (nonatomic, retain) Company *company;
 
 @end
