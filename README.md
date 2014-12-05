@@ -36,7 +36,7 @@ pod 'RSTCoreDataKit', :git => 'https://github.com/rosettastone/RSTCoreDataKit.gi
 #import <RSTCoreDataKit/RSTCoreDataKit.h>
 ````
 
-### Standing up your Core Data stack
+#### Standing up your Core Data stack
 
 ````objective-c
 // Initialize the Core Data model, this class encapsulates the notion of a .xcdatamodeld file
@@ -65,28 +65,28 @@ RSTCoreDataStack *privateStack = [RSTCoreDataStack privateStackWithStoreURL:mode
 RSTCoreDataStack *inMemoryStack = [RSTCoreDataStack stackWithInMemoryStoreWithModelURL:model.modelURL];
 ````
 
-### Saving a managed object context
+#### Saving a managed object context
 
 ````objective-c
 NSManagedObjectContext *context = /* an initialized parent or child context */;
 BOOL success = [RSTCoreDataContextSaver saveAndWait:context];
 ````
 
-### Deleting your store
+#### Deleting your store
 
 ````objective-c
 RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"MyModelName"];
 [model removeExistingModelStore];
 ````
 
-### Checking migrations
+#### Checking migrations
 
 ````objective-c
 RSTCoreDataModel *model = [[RSTCoreDataModel alloc] initWithName:@"MyModelName"];
 BOOL needsMigration = [model modelStoreNeedsMigration];
 ````
 
-### Using child contexts
+#### Using child contexts
 
 ````objective-c
 RSTCoreDataStack *stack = /* an initialized stack */;
@@ -101,7 +101,7 @@ RSTCoreDataContextDidSaveListener *listener = [[RSTCoreDataContextDidSaveListene
 } forManagedObjectContext:privateChildContext];
 ````
 
-### Unit Testing
+#### Unit Testing
 
 `RSTCoreDataKit` has a suite of unit tests included. You can run them in the usual way from Xcode. 
 
