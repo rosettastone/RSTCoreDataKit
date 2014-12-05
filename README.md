@@ -1,6 +1,6 @@
 ![RSTCoreDataKit banner][bannerLink]
 
-[![license BSD](http://img.shields.io/badge/license-BSD-orange.png)][bsdLink]
+[![Build Status](https://travis-ci.org/rosettastone/RSTCoreDataKit.svg)](https://travis-ci.org/rosettastone/RSTCoreDataKit) [![license BSD](http://img.shields.io/badge/license-BSD-orange.png)][bsdLink]
 
 ## About
 
