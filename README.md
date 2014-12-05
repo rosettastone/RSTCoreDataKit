@@ -145,4 +145,4 @@ See `CONTRIBUTING.md`.
 
 [docsLink]:http://cocoadocs.org/docsets/RSTCoreDataKit
 [bsdLink]:http://opensource.org/licenses/BSD-3-Clause
-[bannerLink]:https://bytebucket.org/livemocha/rstcoredatakit/raw/8b9fa998ebae1972ae3f890525ed033367e1c46f/banner.jpg?token=bf14bd9749c56f42586bd0e41ac9f4a93ce99a0a
+[bannerLink]:https://raw.githubusercontent.com/rosettastone/RSTCoreDataKit/develop/banner.jpg
