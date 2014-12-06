@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
 	s.license			= 'BSD 3.0'
 	s.authors			= { 'Jesse Squires' => 'jsquires@rosettastone.com', 'Don Mowry' => 'dmowry@rosettastone.com' }
 	s.social_media_url	= 'https://twitter.com/jesse_squires'
-	s.source			= { :git => 'https://github.com/rosettastone/RSTCoreDataKit', :tag => s.version.to_s }
+	s.source			= { :git => 'https://github.com/rosettastone/RSTCoreDataKit.git', :tag => s.version.to_s }
 	s.platform			= :ios, '8.0'
 	s.source_files		= 'RSTCoreDataKit/*.{h,m}'
 	s.frameworks		= 'CoreData', 'UIKit', 'Foundation'
