@@ -1,8 +1,3 @@
-# Rosetta Stone CocoaDocs template
-
-highlight-font: '"GT Walsheim", "gt_walsheim_regular", "Avant Garde Gothic ITCW01Dm", "Avant Garde", "Helvetica Neue", "Arial'
-body: '"Helvetica Neue", "Arial", san-serif'
-code: '"Monaco", "Menlo", "Consolas", "Courier New", monospace'
 
 highlight-color: "#4195D3"
 highlight-dark-color: "#3272A1"
