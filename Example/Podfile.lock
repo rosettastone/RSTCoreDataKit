@@ -1,5 +1,5 @@
 PODS:
-  - RSTCoreDataKit (0.1.1)
+  - RSTCoreDataKit (0.1.2)
 
 DEPENDENCIES:
   - RSTCoreDataKit (from `../RSTCoreDataKit.podspec`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../RSTCoreDataKit.podspec
 
 SPEC CHECKSUMS:
-  RSTCoreDataKit: 420999ade304b5eb265f532481619d73c5e4d234
+  RSTCoreDataKit: f2027898d672fb812552ade40ee90267fcffb04a
 
 COCOAPODS: 0.35.0
