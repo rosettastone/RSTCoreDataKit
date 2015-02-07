@@ -29,10 +29,6 @@ pod 'RSTCoreDataKit', :git => 'https://github.com/rosettastone/RSTCoreDataKit.gi
 ## Getting Started
 
 ````objective-c
-// New school
-@import RSTCoreDataKit;
-
-// Old school
 #import <RSTCoreDataKit/RSTCoreDataKit.h>
 ````
 
